@@ -1,10 +1,12 @@
 {
   "scripts-info": {
     "info": "Show this info message.",
+    "build": "Create all exercise from the source directory",
     "start": "Watch the source directory and create all exercise solution when files change."
   },
   "scripts": {
     "info": "npm-scripts-info",
+    "build": "babel-node scripts/build",
     "start": "babel-node scripts/start"
   },
   "dependencies": {

@@ -3,8 +3,8 @@ import FS from 'fs-extra'
 import Bundler from 'parcel-bundler'
 import prettyTime from 'pretty-time'
 
-import generateSolutions, { SOLUTIONS_DIR, SRC_DIR } from './helpers/generate-solutions'
-import generateToc, { TOC_FILE } from './helpers/generate-toc'
+import generateSolutions, { SOLUTIONS_DIR, SRC_DIR } from './helpers/generateSolutions'
+import generateToc, { TOC_FILE } from './helpers/generateToc'
 
 const bundler = new Bundler(TOC_FILE, { logLevel: 1 })
 bundler.on('buildEnd', () => {

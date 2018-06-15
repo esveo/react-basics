@@ -1,5 +1,4 @@
-// #if 01
-// #else
+// #if >02
 import React from 'react'
 
 function App(props) {

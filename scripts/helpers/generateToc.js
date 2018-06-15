@@ -2,7 +2,7 @@ import FS from 'fs-extra'
 import Path from 'path'
 
 import EXERCISES from './exercises'
-import { SOLUTIONS_DIR } from './generate-solutions'
+import { SOLUTIONS_DIR } from './generateSolutions'
 
 const TOC_FILE = Path.join(SOLUTIONS_DIR, 'toc.html')
 
