@@ -3,6 +3,7 @@ import FS from 'fs-extra'
 import Bundler from 'parcel-bundler'
 import prettyTime from 'pretty-time'
 
+import { EXERCISES_DIR } from './helpers/exercises'
 import generateSolutions, { SOLUTIONS_DIR, SRC_DIR } from './helpers/generateSolutions'
 import generateToc, { TOC_FILE } from './helpers/generateToc'
 
@@ -17,7 +18,7 @@ FS.emptyDirSync(SOLUTIONS_DIR)
 
 let start = process.hrtime()
 process.stdout.write('Initial build...')
-Chokidar.watch(SRC_DIR).on('ready', async function() {
+Chokidar.watch([EXERCISES_DIR, SRC_DIR]).on('ready', async function() {
   generateSolutions()
   generateToc()
   await bundler.serve()
@@ -27,7 +28,7 @@ Chokidar.watch(SRC_DIR).on('ready', async function() {
       case 'add':
       case 'change':
         start = process.hrtime()
-        process.stdout.write('\rBuilding...')
+        process.stdout.write('\rBuilding...             ')
         generateSolutions([path])
         break
     }

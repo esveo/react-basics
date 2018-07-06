@@ -1,3 +1,14 @@
 {
+  "plugins": [
+    [
+      "emotion",
+      {
+        "hoist": true,
+        "autoLabel": true
+      }
+    ],
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
   "presets": ["env"]
 }

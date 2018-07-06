@@ -16,3 +16,4 @@ const EXERCISES = FS.readdirSync(EXERCISES_DIR).map(fileName => {
 })
 
 export default EXERCISES
+export { EXERCISES_DIR }
