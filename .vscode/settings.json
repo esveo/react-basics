@@ -1,2 +1,7 @@
 {
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "typescriptHero.imports.insertSemicolons": false,
+  "typescriptHero.imports.organizeOnSave": true
 }

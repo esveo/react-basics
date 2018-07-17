@@ -1,7 +1,7 @@
 import { faFighterJet, faFlask, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 /**
- * Maps sattelite types to a description.
+ * Maps satellite types to a description.
  */
 const SATELLITE_TYPE_MAP = {
   communication: {

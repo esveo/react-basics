@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'react-emotion'
 
 import Button from '../common/Button.component'
-import * as Api from './SatelliteApi'
-import Form from './SatelliteForm.component'
-import List from './SatelliteList.component'
-import Visualization from './SatelliteVisualization.component'
+import * as SatelliteApi from './SatelliteApi'
+import SatelliteForm from './SatelliteForm.component'
+import SatelliteList from './SatelliteList.component'
+import SatelliteVisualization from './SatelliteVisualization.component'
 
 /**
  * Allows the user to manage satellites.
@@ -21,27 +21,36 @@ class SatelliteControl extends React.Component {
   }
 
   async loadSatellites() {
-    const satellitesById = await Api.loadSatellites()
+    const satellitesById = await SatelliteApi.loadSatellites()
     this.setState({ satellitesById })
   }
 
   render() {
     return (
       <Wrapper>
-        <ListWrapper>
-          <List
+        <Section width={1}>
+          <SatelliteList
             onSelect={this.handleListSelect}
             satellites={Object.values(this.state.satellitesById)}
             selectedId={this.state.selectedId}
           />
           <Button onClick={this.handleCreateClick}>Create new</Button>
-        </ListWrapper>
-        <Form
-          onDelete={this.handleFormDelete}
-          onSave={this.handleFormSubmit}
-          satellite={this.state.selectedId && this.state.satellitesById[this.state.selectedId]}
-        />
-        <Visualization satellites={this.state.satellitesById} />
+        </Section>
+        <Section width={2}>
+          <SatelliteForm
+            onDelete={this.handleFormDelete}
+            onSave={this.handleFormSubmit}
+            satellite={this.state.selectedId && this.state.satellitesById[this.state.selectedId]}
+          />
+        </Section>
+        <Section width={3}>
+          <SatelliteVisualization
+            satellites={Object.values(this.state.satellitesById).map(satellite => ({
+              ...satellite,
+              isHighlit: satellite.id === this.state.selectedId,
+            }))}
+          />
+        </Section>
       </Wrapper>
     )
   }
@@ -50,7 +59,7 @@ class SatelliteControl extends React.Component {
 
   handleFormDelete = () => {
     const id = this.state.selectedId
-    Api.deleteSatellite(id)
+    SatelliteApi.deleteSatellite(id)
     this.setState(state => {
       const { [id]: deleted, ...rest } = state.satellitesById
       return { satellitesById: rest, selectedId: undefined }
@@ -58,7 +67,7 @@ class SatelliteControl extends React.Component {
   }
 
   handleFormSubmit = async (event, satellite) => {
-    satellite = await Api.saveSatellite(satellite)
+    satellite = await SatelliteApi.saveSatellite(satellite)
     this.setState(state => ({
       satellitesById: { ...state.satellitesById, [satellite.id]: satellite },
       selectedId: satellite.id,
@@ -74,11 +83,15 @@ const Wrapper = styled.div`
   height: 100%;
 `
 
-const ListWrapper = styled.div`
+const Section = styled.div`
   border-right: thin solid #545772;
   display: flex;
-  flex: 1;
+  flex: ${p => p.width};
   flex-direction: column;
+
+  & > :first-child {
+    flex: 1;
+  }
 `
 
 export default SatelliteControl

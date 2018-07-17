@@ -10,11 +10,11 @@ import { SATELLITE_TYPE_MAP } from './utility'
  */
 function SatelliteList(props) {
   return (
-    <List>
+    <List onClick={event => handleListClick(event)}>
       {props.satellites.map(satellite => (
         <Item
           key={satellite.id}
-          onClick={event => props.onSelect(event, satellite.id)}
+          onClick={event => handleItemClick(event, satellite)}
           selected={props.selectedId === satellite.id}
         >
           <Icon icon={SATELLITE_TYPE_MAP[satellite.type].icon} />
@@ -23,6 +23,16 @@ function SatelliteList(props) {
       ))}
     </List>
   )
+
+  function handleListClick(event) {
+    event.stopPropagation()
+    props.onSelect(event, undefined)
+  }
+
+  function handleItemClick(event, satellite) {
+    event.stopPropagation()
+    props.onSelect(event, satellite.id)
+  }
 }
 
 SatelliteList.propTypes = {
@@ -52,7 +62,6 @@ SatelliteList.propTypes = {
 }
 
 const List = styled.ul`
-  flex: 1;
   list-style-type: none;
 `
 

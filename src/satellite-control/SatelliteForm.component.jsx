@@ -133,7 +133,6 @@ class SatelliteForm extends React.Component {
 }
 
 const Form = styled.form`
-  flex: 2;
   padding: 8px 16px;
 `
 
