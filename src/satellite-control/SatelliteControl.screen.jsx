@@ -1,3 +1,4 @@
+import { forEach, random } from 'lodash'
 import React from 'react'
 import styled from 'react-emotion'
 
@@ -22,6 +23,14 @@ class SatelliteControl extends React.Component {
 
   async loadSatellites() {
     const satellitesById = await SatelliteApi.loadSatellites()
+    // TODO we probably don't want to have that random
+    forEach(satellitesById, satellite =>
+      Object.assign(satellite, {
+        angleOfFlight: random(-Math.PI / 2, +Math.PI / 2, true),
+        initialLatitude: random(-Math.PI / 2, +Math.PI / 2, true),
+        initialLongitude: random(-Math.PI, +Math.PI, true),
+      }),
+    )
     this.setState({ satellitesById })
   }
 

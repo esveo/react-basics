@@ -1,4 +1,4 @@
-import { any, arrayOf, bool, shape, string } from 'prop-types'
+import { any, arrayOf, bool, number, shape, string } from 'prop-types'
 import React from 'react'
 import * as Three from 'three'
 
@@ -8,13 +8,14 @@ import TEXTURES from './textures'
  * A graphical view of all satellites.
  */
 class SatelliteVisualization extends React.Component {
-  animationFrame = null
   containerRef = React.createRef()
-  lastDimensions = { height: null, width: null }
-  lastTimestamp = null
-  three = {}
+  lastDimensions = {}
+  three = {
+    satellites: [],
+  }
 
   componentDidMount() {
+    this.startTime = performance.now()
     this.setupRenderer()
     this.setupScene()
     this.setupCamera()
@@ -29,25 +30,73 @@ class SatelliteVisualization extends React.Component {
 
   setupScene() {
     this.three.scene = new Three.Scene()
+    this.createLight()
+    this.createEarth()
+    this.updateSatellites()
+    this.updateScene(0)
+  }
 
-    const earthGeometry = new Three.SphereGeometry(0.8, 16, 12)
-    const earthMaterial = new Three.MeshPhongMaterial({ color: '#cccdda', wireframe: true })
-    this.three.earth = new Three.Mesh(earthGeometry, earthMaterial)
-    this.three.scene.add(this.three.earth)
-
-    const testMaterial = new Three.SpriteMaterial({ color: 'white', map: TEXTURES.military })
-    this.three.test = new Three.Sprite(testMaterial)
-    this.three.scene.add(this.three.test)
-
-    const light = new Three.DirectionalLight()
+  createLight() {
+    const light = new Three.DirectionalLight('white', 1.28)
     light.position.z = 10
     this.three.scene.add(light)
   }
 
+  createEarth() {
+    const geometry = new Three.SphereGeometry(1.08, 16, 12)
+    const material = new Three.MeshPhongMaterial({ color: '#cccdda', wireframe: true })
+    this.three.earth = new Three.Mesh(geometry, material)
+    this.three.scene.add(this.three.earth)
+  }
+
   setupCamera() {
-    this.three.camera = new Three.PerspectiveCamera(75, undefined, 0.1, 1000)
+    this.three.camera = new Three.PerspectiveCamera(2, undefined, 0.1, 1000)
     this.three.camera.rotation.z = 0.4101
-    this.three.camera.position.z = 2
+    this.three.camera.position.z = 100
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.satellites !== prevProps.satellites) this.updateSatellites()
+  }
+
+  updateSatellites() {
+    this.three.earth.remove(...this.three.satellites)
+    this.three.satellites = this.props.satellites.map(satellite => {
+      const group = new Three.Group()
+      group.setRotationFromEuler(
+        new Three.Euler(
+          satellite.initialLatitude,
+          satellite.initialLongitude,
+          satellite.angleOfFlight,
+        ),
+      )
+
+      const spriteMaterial = new Three.SpriteMaterial({
+        color: satellite.isHighlit ? '#1e95ff' : '#cccdda',
+        map: TEXTURES[satellite.type],
+      })
+      const sprite = new Three.Sprite(spriteMaterial)
+      sprite.scale.setScalar(0.08)
+      group.add(sprite)
+
+      const pathCurve = new Three.EllipseCurve(0, 0, 1.32, 1.32)
+      const points = pathCurve.getPoints(64)
+      const pathGeometry = new Three.BufferGeometry().setFromPoints(points)
+      pathGeometry.rotateX(Math.PI / 2)
+      const pathMaterial = new Three.LineDashedMaterial({
+        color: satellite.isHighlit ? '#0086ff' : '#42445b',
+        dashSize: 0.05,
+        gapSize: 0.02,
+      })
+      const path = new Three.Line(pathGeometry, pathMaterial)
+      path.computeLineDistances()
+      group.add(path)
+
+      const speed = satellite.speed * (satellite.reverse ? -1 : +1)
+      group.userData = { speed, sprite }
+      return group
+    })
+    this.three.earth.add(...this.three.satellites)
   }
 
   componentWillUnmount() {
@@ -58,12 +107,11 @@ class SatelliteVisualization extends React.Component {
     return <div ref={this.containerRef} />
   }
 
-  repaint = timestamp => {
-    const timePassed = this.lastTimestamp ? timestamp - this.lastTimestamp : 0
-    this.lastTimestamp = timestamp
+  repaint = () => {
+    const timePassed = this.startTime - performance.now()
     this.animationFrame = requestAnimationFrame(this.repaint)
     this.updateDimensions()
-    this.animateScene(timePassed)
+    this.updateScene(timePassed)
     this.three.renderer.render(this.three.scene, this.three.camera)
   }
 
@@ -75,8 +123,15 @@ class SatelliteVisualization extends React.Component {
     this.three.renderer.setSize(width, height, false)
   }
 
-  animateScene(timePassed) {
-    this.three.earth.rotation.y -= timePassed * 2e-4
+  updateScene(timePassed) {
+    this.three.earth.rotation.y = timePassed * 2e-4
+    this.three.satellites.forEach(satellite => {
+      satellite.userData.sprite.position.setFromSpherical({
+        radius: 1.32,
+        theta: satellite.userData.speed * timePassed * 6e-4,
+        phi: Math.PI / 2,
+      })
+    })
   }
 }
 
@@ -86,7 +141,11 @@ SatelliteVisualization.propTypes = {
    */
   satellites: arrayOf(
     shape({
+      angleOfFlight: number.isRequired,
+      id: string.isRequired,
       isHighlit: bool,
+      initialLatitude: number.isRequired,
+      initialLongitude: number.isRequired,
       name: string.isRequired,
       type: any.isRequired,
     }),
