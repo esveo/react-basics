@@ -96,7 +96,9 @@ class SatelliteVisualization extends React.Component {
       group.userData = { speed, sprite }
       return group
     })
-    this.three.earth.add(...this.three.satellites)
+    if (this.three.satellites.length > 0) {
+      this.three.earth.add(...this.three.satellites)
+    }
   }
 
   componentWillUnmount() {
