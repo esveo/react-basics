@@ -7,8 +7,7 @@
         "autoLabel": true
       }
     ],
-    "transform-class-properties",
-    "transform-object-rest-spread"
+    "@babel/plugin-proposal-class-properties"
   ],
-  "presets": ["env"]
+  "presets": ["@babel/env"]
 }
