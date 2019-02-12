@@ -14,13 +14,12 @@ export function Header({ text }) {
 
 const HeaderContainer = styled('div')`
   align-items: center;
-  color: secondary;
   display: flex;
   height: 2em;
   left: 0;
   margin: 0;
   padding: 0 0.75em;
-  position: fixed;
+  position: absolute;
   right: 0;
   text-align: left;
   top: 0;

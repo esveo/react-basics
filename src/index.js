@@ -1,3 +1,4 @@
+import 'prism-theme-night-owl';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'spectacle';
