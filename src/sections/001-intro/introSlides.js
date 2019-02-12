@@ -1,14 +1,14 @@
 import React from 'react';
-import { Slide, Heading, Text } from 'spectacle';
-import { Header } from '../../__helpers/slides/Header';
+import { Heading, Slide, Text } from 'spectacle';
 import { Footer } from '../../__helpers/slides/Footer';
+import { Header } from '../../__helpers/slides/Header';
 
 export const introSlides = [
   function Hello1() {
     return (
       <Slide transition={['fade']}>
         <Header text="Hello" />
-        <Heading size={6} textColor="primary" caps>
+        <Heading size={6} textColor="tertiary" caps>
           Typography
         </Heading>
         <Heading size={1} textColor="secondary">
@@ -37,7 +37,7 @@ export const introSlides = [
     return (
       <Slide transition={['fade']}>
         <Header text="Hello" />
-        <Heading size={6} textColor="primary" caps>
+        <Heading size={6} textColor="tertiary" caps>
           Typography
         </Heading>
         <Heading size={1} textColor="secondary">
@@ -66,7 +66,7 @@ export const introSlides = [
     return (
       <Slide transition={['fade']}>
         <Header text="Hello" />
-        <Heading size={6} textColor="primary" caps>
+        <Heading size={6} textColor="tertiary" caps>
           Typography
         </Heading>
         <Heading size={1} textColor="secondary">

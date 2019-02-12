@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading } from 'spectacle';
 import styled from 'react-emotion';
+import { Heading } from 'spectacle';
 
 export function Header({ text }) {
   return (
@@ -16,7 +16,6 @@ const HeaderContainer = styled('div')`
   align-items: center;
   color: secondary;
   display: flex;
-  font-size: 1.2em;
   height: 2em;
   left: 0;
   margin: 0;
@@ -29,5 +28,7 @@ const HeaderContainer = styled('div')`
 `;
 
 const HeaderText = styled(Heading)`
-  font-size: 1.2em;
+  && {
+    font-size: 1.2em;
+  }
 `;

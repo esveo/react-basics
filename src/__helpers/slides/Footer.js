@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { ReactComponent as Logo } from './esveo-logo.svg';
+import { Logo } from './Logo';
 
-export function Footer({ text }) {
+export function Footer() {
   return (
     <FooterContainer>
-      <Img />
+      <Logo />
     </FooterContainer>
   );
 }
@@ -24,11 +24,4 @@ const FooterContainer = styled('div')`
   justify-content: flex-end;
   bottom: 0;
   white-space: nowrap;
-`;
-
-const Img = styled(Logo)`
-  height: 20px;
-  path {
-    fill: black;
-  }
 `;

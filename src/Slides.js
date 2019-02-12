@@ -1,8 +1,9 @@
 import React from 'react';
-
 import { Deck, Heading, Slide, Text } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import { allSlides } from './sections/allSlides';
+import { Logo } from './__helpers/slides/Logo';
+import { ReactLogo } from './__helpers/slides/ReactLogo';
 
 const theme = createTheme(
   {
@@ -26,11 +27,12 @@ export function Slides() {
       showFullscreenControl={false}
     >
       <Slide bgColor="primary">
+        <ReactLogo style={{ height: 100 }} />
         <Heading size={1} fit textColor="tertiary">
-          React Basics Schulung
+          React Basics
         </Heading>
         <Text margin="10px 0 0" textColor="secondary" bold>
-          by esveo
+          by <Logo />
         </Text>
       </Slide>
       {allSlides.map((Component, index) => (

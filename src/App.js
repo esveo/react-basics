@@ -1,11 +1,9 @@
-import './App.css';
-
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import { Slides } from './Slides';
-import { Home } from './Home';
+import './App.css';
 import { Exercises } from './Exercises';
+import { Home } from './Home';
+import { Slides } from './Slides';
 
 class App extends Component {
   render() {
