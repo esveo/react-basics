@@ -4,5 +4,5 @@
  * document.getElementById('root')
  */
 export const init = container => {
-  console.log('Hello World');
+  alert('Hello World');
 };

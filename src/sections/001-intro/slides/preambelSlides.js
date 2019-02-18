@@ -1,5 +1,6 @@
 import React from 'react';
 import { Slide } from 'spectacle';
+import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
@@ -32,19 +33,19 @@ export const preambelSlides = [
   getTOCSlide(),
 
   <Slide>
-    <Header text="State of JS – The early days" />
+    <Header text={`State of JS ${dash} The early days`} />
     <Heading caps>TODO</Heading>
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="State of JS – Frameworks" />
+    <Header text={`State of JS ${dash} Frameworks`} />
     <Heading caps>TODO</Heading>
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="State of JS – Build Chains" />
+    <Header text={`State of JS ${dash} Build Chains`} />
     <Heading caps>TODO</Heading>
     <Footer />
   </Slide>,
@@ -59,10 +60,10 @@ export const preambelSlides = [
             <b>Chrome</b> or <b>Firefox</b>
           </ListItem>
           <ListItem>
-            <b>Node.js</b> – validate with <Code>node -v</Code>
+            <b>Node.js</b> {dash} validate with <Code>node -v</Code>
           </ListItem>
           <ListItem>
-            <b>npm</b> – validate with <Code>npm -v</Code>
+            <b>npm</b> {dash} validate with <Code>npm -v</Code>
           </ListItem>
           <ListItem>
             Editor/IDE: <b>Visual Studio Code</b> (recommended), WebStorm, Atom,
@@ -81,10 +82,10 @@ export const preambelSlides = [
       <ListItem>
         When this step is working, delete everything in the <Code>/src</Code>{' '}
         directory and add new file <Code>index.js</Code> with just one line{' '}
-        <Code>console.log('Hello World')</Code>
+        <Code>alert('Hello World')</Code>
       </ListItem>
       <ListItem>
-        Compare with your result with <Link to={pathTo(init)}>Solution</Link>
+        Compare your result with the <Link to={pathTo(init)}>solution</Link>
       </ListItem>
     </List>
     <Footer />

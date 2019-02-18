@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import raw from 'raw.macro';
 import React from 'react';
 import { Slide } from 'spectacle';
+import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Footer } from '../../../__helpers/slides/Footer';
@@ -12,7 +13,7 @@ import { List, ListItem } from '../../../__helpers/slides/List';
 
 export const meetingReactSlides = [
   <Slide>
-    <Header text="Meeting React – Pure React" />
+    <Header text={`Meeting React ${dash} Pure React`} />
     <Heading>
       data <FontAwesomeIcon icon={faLongArrowAltRight} /> UI
     </Heading>
@@ -20,7 +21,7 @@ export const meetingReactSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Meeting React – Pure React" />
+    <Header text={`Meeting React ${dash} Pure React`} />
     <Heading fit>
       data <FontAwesomeIcon icon={faLongArrowAltRight} /> UI-Description
     </Heading>
@@ -28,19 +29,19 @@ export const meetingReactSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Meeting React – Pure React" />
+    <Header text={`Meeting React ${dash} Pure React`} />
     <CodeBlock lang="jsx" source={raw('../examples/meetingReactNoJSX-01.js')} />
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="Meeting React – UI as a tree" />
+    <Header text={`Meeting React ${dash} UI as a tree`} />
     <CodeBlock lang="jsx" source={raw('../examples/meetingReactNoJSX-02.js')} />
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="Meeting React – basic API" tag="API" />
+    <Header text={`Meeting React ${dash} basic API`} tag="API" />
     <CodeBlock
       lang="jsx"
       source={'React.createElement(type, [props], [...children])'}
@@ -73,7 +74,7 @@ export const meetingReactSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Meeting React – basic API" tag="API" />
+    <Header text={`Meeting React ${dash} basic API`} tag="API" />
     <CodeBlock lang="jsx" source={'ReactDOM.render(reactNode, container)'} />
     <Heading size={6} textAlign="left">
       Render given ReactNode (UI-Description) into the DOM
