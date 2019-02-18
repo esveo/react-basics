@@ -1,5 +1,5 @@
+import styled from '@emotion/styled/macro';
 import React from 'react';
-import styled from 'react-emotion';
 import { Logo } from './Logo';
 
 export function Footer() {

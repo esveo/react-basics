@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'react-emotion';
+import { keyframes } from '@emotion/core';
+import styled from '@emotion/styled/macro';
 import { ReactComponent as Logo } from './react-logo.svg';
 
 const rotate = keyframes`

@@ -3,24 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.14",
     "@fortawesome/free-regular-svg-icons": "^5.7.1",
     "@fortawesome/free-solid-svg-icons": "^5.7.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "emotion": "8.0.8",
+    "paths.macro": "^2.0.2",
     "polished": "^2.3.3",
     "prism-theme-night-owl": "^1.0.1",
     "prop-types": "^15.7.1",
     "raw.macro": "^0.2.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-emotion": "8.0.8",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "spectacle": "^5.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -33,5 +34,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
 }

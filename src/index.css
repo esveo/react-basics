@@ -8,7 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 12px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+code[class*='language-'] ::selection,
+code[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+pre[class*='language-']::selection {
+  text-shadow: none;
+  background: #989fa8;
 }

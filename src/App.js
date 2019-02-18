@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import { Exercises } from './Exercises';
 import { Home } from './Home';
 import { Slides } from './Slides';
+import { Solutions } from './Solutions';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
         <>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/slides" render={() => <Slides />} />
-          <Route path="/exercises" render={() => <Exercises />} />
+          <Route path="/solutions" render={() => <Solutions />} />
         </>
       </Router>
     );

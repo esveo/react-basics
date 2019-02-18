@@ -10,7 +10,7 @@ export function Home() {
           <Link to="/slides">Slides</Link>
         </li>
         <li>
-          <Link to="/exercises">Exercises</Link>
+          <Link to="/solutions">Solutions</Link>
         </li>
       </ul>
     </>
