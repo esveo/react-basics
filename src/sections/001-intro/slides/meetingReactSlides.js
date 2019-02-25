@@ -10,6 +10,7 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { meetingReactExerciseSlides } from '../exercises/meetingReact/slides';
 
 export const meetingReactSlides = [
   <Slide>
@@ -90,9 +91,5 @@ export const meetingReactSlides = [
     <Footer />
   </Slide>,
 
-  <Slide>
-    <Header text="Meeting React" tag="Exercise" />
-
-    <Footer />
-  </Slide>
+  ...meetingReactExerciseSlides
 ];

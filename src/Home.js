@@ -15,7 +15,7 @@ export function Home() {
       <Content>Training material</Content>
       <Links>
         <Link to="/slides">Slides</Link>
-        <Link to="/solutions">Solutions</Link>
+        <Link to="/exercises">Exercises</Link>
       </Links>
     </Wrapper>
   );

@@ -7,8 +7,9 @@ import { Route, Switch } from 'react-router-dom';
 import { allSolutions } from './sections/allSolutions';
 import { dash } from './__helpers/dash';
 import { Link, NavLink } from './__helpers/slides/Link';
+import { pathToSolution } from './__helpers/solutions/pathToSolution';
 
-export function Solutions() {
+export function Exercises() {
   return (
     <>
       <Route
@@ -19,23 +20,36 @@ export function Solutions() {
               exact
               render={() => (
                 <Header
-                  breadcrumbs={[{ path: '/solutions', name: 'Solutions' }]}
+                  breadcrumbs={[{ path: '/exercises', name: 'Exercises' }]}
                 >
-                  <SolutionsContainer>
-                    <h1>Solutions</h1>
+                  <ExercisesContainer>
+                    <h1>Exercises</h1>
                     <table>
                       <thead>
                         <tr>
-                          <th>Result</th>
-                          <th>Source Code</th>
+                          <th>Exercise</th>
+                          <th>Solution Result</th>
+                          <th>Solution Source Code</th>
                         </tr>
                       </thead>
                       <tbody>
                         {allSolutions.map((solution, index) => (
                           <tr key={index}>
                             <td>
-                              <Link to={match.url + '/' + index}>
+                              <Link
+                                to="/slides"
+                                onClick={e => {
+                                  window.location.replace(
+                                    solution.exercisePath
+                                  );
+                                }}
+                              >
                                 {index + 1}. {solution.name}
+                              </Link>
+                            </td>
+                            <td>
+                              <Link to={pathToSolution(solution.thunk)}>
+                                Result
                               </Link>
                             </td>
                             <td>{solution.fileSystemPath}</td>
@@ -44,7 +58,7 @@ export function Solutions() {
                       </tbody>
                     </table>
                     <ul />
-                  </SolutionsContainer>
+                  </ExercisesContainer>
                 </Header>
               )}
             />
@@ -52,13 +66,13 @@ export function Solutions() {
               {allSolutions.map((solution, index) => (
                 <Route
                   key={index}
-                  path={match.path + '/' + index}
+                  path={match.path + '/' + solution.thunk}
                   render={() => (
                     <Header
                       breadcrumbs={[
-                        { path: '/solutions', name: 'Solutions' },
+                        { path: '/exercises', name: 'Exercises' },
                         {
-                          path: match.path + '/' + index,
+                          path: match.path + '/' + solution.thunk,
                           name:
                             solution.name +
                             ` ${dash} ` +
@@ -79,7 +93,7 @@ export function Solutions() {
   );
 }
 
-const SolutionsContainer = styled.div`
+const ExercisesContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
