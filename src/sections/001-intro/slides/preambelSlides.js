@@ -41,7 +41,13 @@ export const preambelSlides = [
   </Slide>,
 
   <Slide>
-    <Header text={`State of JS ${dash} Build Chains`} />
+    <Header text={`State of JS ${dash} Modules`} />
+    <Heading caps>TODO</Heading>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text={`State of JS ${dash} Build Chain`} />
     <Heading caps>TODO</Heading>
     <Footer />
   </Slide>,

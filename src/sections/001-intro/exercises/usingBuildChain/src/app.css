@@ -1,0 +1,38 @@
+.app-root {
+  padding: 10px;
+}
+
+.app-root nav {
+  background: #223;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.app-root nav a {
+  color: white;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 1.5em;
+  position: relative;
+}
+
+.app-root nav a:after {
+  content: '|';
+  position: absolute;
+  right: 0;
+}
+
+.app-root nav a:last-child:after {
+  content: none;
+}
+
+.app-root main {
+  height: 200px;
+  background-color: #ccc;
+}
+
+.app-root footer {
+  height: 100px;
+  background-color: #223;
+}

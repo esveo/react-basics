@@ -10,7 +10,7 @@ export function Slides() {
     <Deck
       transition={['fade']}
       transitionDuration={200}
-      progress="bar"
+      progress="none"
       theme={theme}
       showFullscreenControl={false}
     >

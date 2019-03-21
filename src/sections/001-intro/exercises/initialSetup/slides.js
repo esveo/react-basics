@@ -41,7 +41,7 @@ export const initialSetupExerciseSlides = [
       </ListItem>
       <ListItem>
         When this step is working, delete everything in the <Code>/src</Code>{' '}
-        directory and add new file <Code>index.js</Code> with just one line{' '}
+        directory and add a new file <Code>index.js</Code> with just one line{' '}
         <Code>alert('Hello World')</Code>
       </ListItem>
       <ListItem>

@@ -36,8 +36,35 @@ export const meetingReactSlides = [
   </Slide>,
 
   <Slide>
+    <Header text={`var, let and const`} tag="JS recap" />
+    <Heading>TODO</Heading>
+    <Footer />
+  </Slide>,
+
+  <Slide>
     <Header text={`Meeting React ${dash} UI as a tree`} />
     <CodeBlock lang="jsx" source={raw('../examples/meetingReactNoJSX-02.js')} />
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header
+      text={`arrow functions vs. function declarations vs. function expressions`}
+      tag="JS recap"
+    />
+    <Heading>TODO</Heading>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text={`imports`} tag="JS recap" />
+    <Heading>TODO</Heading>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text={`map & filter`} tag="JS recap" />
+    <Heading>TODO</Heading>
     <Footer />
   </Slide>,
 

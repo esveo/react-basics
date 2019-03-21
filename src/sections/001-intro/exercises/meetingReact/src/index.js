@@ -9,15 +9,20 @@ import ReactDOM from 'react-dom';
 export const init = container => {
   const app = React.createElement(
     'div',
-    { className: 'container' },
-    React.createElement('h1', null, 'Hello World'),
+    { className: 'app-root' },
     React.createElement(
-      'ul',
+      'header',
       null,
-      [1, 2, 3].map(number =>
-        React.createElement('li', { key: number }, number)
+      React.createElement(
+        'nav',
+        null,
+        ['https://google.de', 'https://yahoo.de', 'https://bing.de'].map(url =>
+          React.createElement('a', { key: url, href: url }, url)
+        )
       )
-    )
+    ),
+    React.createElement('main'),
+    React.createElement('footer')
   );
 
   ReactDOM.render(app, container);
