@@ -5,7 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router-dom';
 import { allSolutions } from './sections/allSolutions';
-import { dash } from './__helpers/dash';
 import { Link, NavLink } from './__helpers/slides/Link';
 import { pathToSolution } from './__helpers/solutions/pathToSolution';
 
@@ -29,7 +28,6 @@ export function Exercises() {
                         <tr>
                           <th>Exercise</th>
                           <th>Solution Result</th>
-                          <th>Solution Source Code</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,7 +50,6 @@ export function Exercises() {
                                 Result
                               </Link>
                             </td>
-                            <td>{solution.fileSystemPath}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -73,10 +70,7 @@ export function Exercises() {
                         { path: '/exercises', name: 'Exercises' },
                         {
                           path: match.path + '/' + solution.thunk,
-                          name:
-                            solution.name +
-                            ` ${dash} ` +
-                            solution.fileSystemPath
+                          name: solution.name
                         }
                       ]}
                     >

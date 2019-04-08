@@ -5,7 +5,7 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
-import { initialSetupExerciseSlides } from '../exercises/initialSetup/slides';
+import { initialSetupExerciseSlides } from '../exercises/01-initialSetup/slides';
 
 export const preambelSlides = [
   <Slide>

@@ -4,7 +4,7 @@ import { dash } from '../../../__helpers/dash';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
-import { usingBuildChainExerciseSlides } from '../exercises/usingBuildChain/slides';
+import { usingBuildChainExerciseSlides } from '../exercises/03-usingBuildChain/slides';
 
 export const usingBuildChainSlides = [
   <Slide>

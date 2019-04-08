@@ -14,7 +14,9 @@ export function Home() {
       </p>
       <Content>Training material</Content>
       <Links>
-        <Link to="/slides">Slides</Link>
+        <Link data-test-id="slides-link" to="/slides">
+          Slides
+        </Link>
         <Link to="/exercises">Exercises</Link>
       </Links>
     </Wrapper>
