@@ -1,9 +1,9 @@
-import { meetingReactSlides } from './fromStaticJSXToComponents';
-import { preambelSlides } from './preambelSlides';
-import { usingBuildChainSlides } from './usingBuildChainSlides';
+import { dataFlowSlides } from './dataFlow';
+import { destructuringAndSpreadSlides } from './destructuringAndSpread';
+import { fromStaticJSXTOComponentsSlides } from './fromStaticJSXToComponents';
 
 export const firstStepsSlides = [
-  ...preambelSlides,
-  ...meetingReactSlides,
-  ...usingBuildChainSlides
+  ...fromStaticJSXTOComponentsSlides,
+  ...destructuringAndSpreadSlides,
+  ...dataFlowSlides
 ];
