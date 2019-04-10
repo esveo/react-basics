@@ -65,7 +65,7 @@ export const dataFlowExerciseSlides = [
       </ListItem>
       <ListItem>
         Add a variable <Code>counter</Code> in the index.js and set it to{' '}
-        <Code>0</Code>
+        <Code>0</Code>. (use <Code>let</Code>)
       </ListItem>
       <ListItem>
         Add function in the <Code>index.js</Code> that increments the{' '}
@@ -74,6 +74,10 @@ export const dataFlowExerciseSlides = [
       <ListItem>
         After incrementing, this function should call{' '}
         <Code>ReactDOM.render</Code> again with the updated data.
+      </ListItem>
+      <ListItem>
+        Pass this function to the <Code>App</Code> component:
+        <Code>{'<App counter={0} increment={incrementAndRender} />'}</Code>
       </ListItem>
       <ListItem>
         Compare your result with the{' '}

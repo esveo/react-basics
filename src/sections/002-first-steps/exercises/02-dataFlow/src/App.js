@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import { Button } from './Button';
 import { Link } from './Link';
 
 const urls = ['https://google.de', 'https://yahoo.de', 'https://bing.de'];
 
-export function App() {
+export function App(props) {
   return (
     <div className="app-root">
       <header>
@@ -14,7 +15,9 @@ export function App() {
           ))}
         </nav>
       </header>
-      <main />
+      <main>
+        <Button onClick={props.increment}>{props.counter}</Button>
+      </main>
       <footer />
     </div>
   );

@@ -35,6 +35,11 @@
   flex-direction: row;
 }
 
+.app-root main div {
+  text-align: center;
+  padding: 30px;
+}
+
 .app-root footer {
   height: 100px;
   background-color: #223;
