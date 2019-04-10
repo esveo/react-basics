@@ -8,7 +8,11 @@ import { Slides } from './Slides';
 class App extends Component {
   render() {
     return (
-      <Router initialEntries={['/slides']}>
+      <Router
+        initialEntries={
+          process.env.NODE_ENV === 'production' ? undefined : ['/slides']
+        }
+      >
         <>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/slides" render={() => <Slides />} />
