@@ -111,6 +111,7 @@ function Solution({ solution }) {
   React.useEffect(() => {
     const containerParent = containerParentRef.current;
     const container = document.createElement('div');
+    container.style.height = '100%';
     containerParent.innerHTML = '';
     containerParent.appendChild(container);
 
@@ -123,7 +124,7 @@ function Solution({ solution }) {
     };
   }, [solution]);
 
-  return <div ref={containerParentRef} />;
+  return <div style={{ height: '100%' }} ref={containerParentRef} />;
 }
 
 function Header({ children, breadcrumbs = [] }) {

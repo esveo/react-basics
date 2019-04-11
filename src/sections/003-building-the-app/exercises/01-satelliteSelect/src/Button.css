@@ -1,0 +1,15 @@
+.app-button {
+  background: white;
+  border: 1px solid blue;
+  border-radius: 2px;
+  color: black;
+  cursor: pointer;
+}
+
+.app-button:hover {
+  background: #ddd;
+}
+
+.app-button:active {
+  background: #bbb;
+}
