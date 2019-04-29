@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from './Button';
 
 export function App(props) {
   const [satellites] = useState(dummyData);
@@ -27,6 +28,7 @@ export function App(props) {
             </li>
           ))}
         </ul>
+        <Button onClick={() => onSatelliteClick()}>Create new</Button>
       </div>
       <div className="satellite-details">
         {selectedSatellite && selectedSatellite.name}

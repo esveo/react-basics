@@ -60,7 +60,14 @@ export const satelliteSelectExerciseSlides = [
         Define a new function <Code>onSatelliteClick(satellite)</Code> in the{' '}
         <Code>App</Code> component, that sets a new state variable{' '}
         <Code>selectedSatellite</Code>. Call this function in the anonymous
-        onClick handler on each <Code>li</Code> tag.
+        onClick handler on each <Code>li</Code> tag with the satellite of this{' '}
+        <Code>li</Code>.
+      </ListItem>
+
+      <ListItem>
+        Add a <Code>button</Code> "Create new" after the <Code>ul</Code> and add
+        an anonymous event handler that calls the <Code>onSatelliteClick</Code>{' '}
+        without any arguments.
       </ListItem>
 
       <ListItem>

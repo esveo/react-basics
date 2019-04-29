@@ -163,7 +163,7 @@ const HeaderNav = styled.div`
   align-items: center;
   display: flex;
   font-size: 1.2em;
-  height: 4em;
+  height: 60px;
   background: rgb(35, 35, 35);
 
   & > * {
@@ -181,6 +181,6 @@ const HeaderNav = styled.div`
 `;
 
 const HeaderChildrenContainer = styled.div`
-  height: calc(100% - 4em);
+  height: calc(100% - 60px);
   overflow: auto;
 `;
