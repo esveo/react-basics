@@ -26,6 +26,11 @@ for (const section of sections) {
   }
 }
 
+fse.copyFileSync(
+  path.join(__dirname, 'server.js'),
+  path.join(__dirname, 'build/server.js')
+);
+
 async function exportPDF() {
   const b = await puppeteer.launch();
   const p = await b.newPage();

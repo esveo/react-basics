@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button } from './Button';
+import {
+  createSatellite,
+  deleteSatellite,
+  getSatellites,
+  updateSatellite
+} from './satelliteApi';
 import { SatelliteForm } from './SatelliteForm';
 import { SatelliteSelect } from './SatelliteSelect';
 
@@ -9,28 +15,26 @@ export function App(props) {
   const [selectedSatelliteId, setSelectedSatelliteId] = useState();
 
   useEffect(() => {
-    setSatellites(dummyData);
+    getSatellites().then(satellites => setSatellites(satellites));
   }, []);
 
   const selectedSatellite =
     selectedSatelliteId && satellites.find(s => s.id === selectedSatelliteId);
 
-  function handleSave(satellite) {
+  async function handleSave(satellite) {
     if (!selectedSatelliteId) {
-      setSatellites(s => [
-        ...s,
-        { id: (Math.random() * 99999).toFixed(0), ...satellite }
-      ]);
+      const created = await createSatellite(satellite);
+      setSatellites(s => [...s, created]);
       return;
     }
+    const updated = await updateSatellite(satellite);
     setSatellites(oldSatellites =>
-      oldSatellites.map(s =>
-        s.id === selectedSatelliteId ? { ...s, ...satellite } : s
-      )
+      oldSatellites.map(s => (s.id === selectedSatelliteId ? updated : s))
     );
   }
 
   function handleDelete(satellite) {
+    deleteSatellite(satellite);
     setSatellites(oldSatellites =>
       oldSatellites.filter(s => s.id !== satellite.id)
     );
@@ -57,48 +61,3 @@ export function App(props) {
     </div>
   );
 }
-
-const dummyData = [
-  {
-    id: '0',
-    name: 'International Space Station',
-    type: 'science',
-    speed: 3,
-    reverse: false
-  },
-  {
-    id: '1',
-    name: 'Hubble Space Telescope',
-    type: 'science',
-    speed: 1,
-    reverse: true
-  },
-  {
-    id: '2',
-    name: 'GoldenEye',
-    type: 'military',
-    speed: 2,
-    reverse: true
-  },
-  {
-    id: '3',
-    name: 'LANDSAT-7',
-    type: 'science',
-    speed: 1.5,
-    reverse: false
-  },
-  {
-    id: '4',
-    name: 'Galaxy 14',
-    type: 'communication',
-    speed: 0.8,
-    reverse: false
-  },
-  {
-    id: '5',
-    name: 'GPS IIR-11',
-    type: 'communication',
-    speed: 1,
-    reverse: true
-  }
-];
