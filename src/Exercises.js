@@ -73,6 +73,7 @@ export function Exercises() {
                           name: solution.name
                         }
                       ]}
+                      solution={solution}
                     >
                       <Solution solution={solution} />
                     </Header>
@@ -127,7 +128,7 @@ function Solution({ solution }) {
   return <div style={{ height: '100%' }} ref={containerParentRef} />;
 }
 
-function Header({ children, breadcrumbs = [] }) {
+function Header({ children, breadcrumbs = [], solution }) {
   return (
     <HeaderContainer>
       <HeaderNav>
@@ -144,6 +145,16 @@ function Header({ children, breadcrumbs = [] }) {
             </NavLink>
           </React.Fragment>
         ))}
+        {solution && (
+          <Link
+            to="/slides"
+            onClick={e => {
+              window.location.replace(solution.exercisePath);
+            }}
+          >
+            (Exercise Slides)
+          </Link>
+        )}
       </HeaderNav>
       <HeaderChildrenContainer>{children}</HeaderChildrenContainer>
     </HeaderContainer>
