@@ -36,7 +36,7 @@ const handlers = [
           console.error(err);
           return fail(res, 400, String(err));
         }
-        const { name, type, speed, reverse } = data;
+        const { name, type, angle, reverse } = data;
         if (typeof name !== 'string') {
           return fail(res, 400, 'Name is a required field.');
         }
@@ -50,8 +50,8 @@ const handlers = [
             'Type must be one of "science", "military" and "communication".'
           );
         }
-        if (typeof speed !== 'number') {
-          return fail(res, 400, 'Speed must be a number');
+        if (typeof angle !== 'number' || angle < 0 || angle > 360) {
+          return fail(res, 400, 'Angle must be a number between 0 and 360');
         }
         if (typeof reverse !== 'boolean') {
           return fail(res, 400, 'Reverse must be a boolean');
@@ -59,7 +59,7 @@ const handlers = [
         const newSatellite = {
           id: (Math.random(9999999) * 1000000).toFixed(0),
           name,
-          speed,
+          angle,
           type,
           reverse
         };
@@ -86,7 +86,7 @@ const handlers = [
           console.error(err);
           return fail(res, 400, String(err));
         }
-        const { name, type, speed, reverse } = data;
+        const { name, type, angle, reverse } = data;
         if (typeof name !== 'string') {
           return fail(res, 400, 'Name is a required field.');
         }
@@ -100,15 +100,15 @@ const handlers = [
             'Type must be one of "science", "military" and "communication".'
           );
         }
-        if (typeof speed !== 'number') {
-          return fail(res, 400, 'Speed must be a number');
+        if (typeof angle !== 'number' || angle < 0 || angle > 360) {
+          return fail(res, 400, 'Angle must be a number between 0 and 360.');
         }
         if (typeof reverse !== 'boolean') {
           return fail(res, 400, 'Reverse must be a boolean');
         }
         Object.assign(satellite, {
           name,
-          speed,
+          angle,
           type,
           reverse
         });
@@ -153,42 +153,35 @@ const dummyData = [
     id: '0',
     name: 'International Space Station',
     type: 'science',
-    speed: 3,
+    angle: 15,
     reverse: false
   },
   {
     id: '1',
     name: 'Hubble Space Telescope',
     type: 'science',
-    speed: 1,
+    angle: 40,
     reverse: true
   },
   {
     id: '2',
     name: 'GoldenEye',
     type: 'military',
-    speed: 2,
+    angle: 66,
     reverse: true
-  },
-  {
-    id: '3',
-    name: 'LANDSAT-7',
-    type: 'science',
-    speed: 1.5,
-    reverse: false
   },
   {
     id: '4',
     name: 'Galaxy 14',
     type: 'communication',
-    speed: 0.8,
+    angle: 110,
     reverse: false
   },
   {
     id: '5',
     name: 'GPS IIR-11',
     type: 'communication',
-    speed: 1,
+    angle: 135,
     reverse: true
   }
 ];

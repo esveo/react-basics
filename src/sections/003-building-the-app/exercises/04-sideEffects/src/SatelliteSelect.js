@@ -34,7 +34,7 @@ SatelliteSelect.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       reverse: PropTypes.bool.isRequired,
-      speed: PropTypes.number.isRequired,
+      angle: PropTypes.number.isRequired,
       type: PropTypes.oneOf(['communication', 'military', 'science']).isRequired
     })
   ).isRequired

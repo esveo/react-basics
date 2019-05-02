@@ -43,42 +43,42 @@ const dummyData = [
     id: '0',
     name: 'International Space Station',
     type: 'science',
-    speed: 3,
+    angle: 45,
     reverse: false
   },
   {
     id: '1',
     name: 'Hubble Space Telescope',
     type: 'science',
-    speed: 1,
+    angle: 160,
     reverse: true
   },
   {
     id: '2',
     name: 'GoldenEye',
     type: 'military',
-    speed: 2,
+    angle: 20,
     reverse: true
   },
   {
     id: '3',
     name: 'LANDSAT-7',
     type: 'science',
-    speed: 1.5,
+    angle: 260,
     reverse: false
   },
   {
     id: '4',
     name: 'Galaxy 14',
     type: 'communication',
-    speed: 0.8,
+    angle: 350,
     reverse: false
   },
   {
     id: '5',
     name: 'GPS IIR-11',
     type: 'communication',
-    speed: 1,
+    angle: 200,
     reverse: true
   }
 ];

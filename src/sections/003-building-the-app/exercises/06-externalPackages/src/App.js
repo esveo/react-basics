@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
+import SatelliteVisualisation from '@esveo/satellite-visualisation';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button } from './Button';
+import {
+  createSatellite,
+  deleteSatellite,
+  getSatellites,
+  updateSatellite
+} from './satelliteApi';
 import { SatelliteForm } from './SatelliteForm';
 import { SatelliteSelect } from './SatelliteSelect';
 
 export function App(props) {
-  const [satellites, setSatellites] = useState(dummyData);
+  const [satellites, setSatellites] = useState([]);
   const [selectedSatelliteId, setSelectedSatelliteId] = useState();
+
+  useEffect(() => {
+    getSatellites().then(satellites => setSatellites(satellites));
+  }, []);
 
   const selectedSatellite =
     selectedSatelliteId && satellites.find(s => s.id === selectedSatelliteId);
 
-  function handleSave(satellite) {
+  async function handleSave(satellite) {
     if (!selectedSatelliteId) {
-      setSatellites(s => [
-        ...s,
-        { id: (Math.random() * 99999).toFixed(0), ...satellite }
-      ]);
+      const created = await createSatellite(satellite);
+      setSatellites(s => [...s, created]);
       return;
     }
+    const updated = await updateSatellite(satellite);
     setSatellites(oldSatellites =>
-      oldSatellites.map(s =>
-        s.id === selectedSatelliteId ? { ...s, ...satellite } : s
-      )
+      oldSatellites.map(s => (s.id === selectedSatelliteId ? updated : s))
     );
   }
 
   function handleDelete(satellite) {
+    deleteSatellite(satellite);
     setSatellites(oldSatellites =>
       oldSatellites.filter(s => s.id !== satellite.id)
     );
   }
-
   return (
     <div className="satellite-control-app">
       <div className="satellite-select">
@@ -49,53 +57,12 @@ export function App(props) {
           onDelete={handleDelete}
         />
       </div>
-      <div className="satellite-visualization" />
+      <div className="satellite-visualisation">
+        <SatelliteVisualisation
+          satellites={satellites}
+          selectedSatelliteId={selectedSatelliteId}
+        />
+      </div>
     </div>
   );
 }
-
-const dummyData = [
-  {
-    id: '0',
-    name: 'International Space Station',
-    type: 'science',
-    angle: 45,
-    reverse: false
-  },
-  {
-    id: '1',
-    name: 'Hubble Space Telescope',
-    type: 'science',
-    angle: 160,
-    reverse: true
-  },
-  {
-    id: '2',
-    name: 'GoldenEye',
-    type: 'military',
-    angle: 20,
-    reverse: true
-  },
-  {
-    id: '3',
-    name: 'LANDSAT-7',
-    type: 'science',
-    angle: 260,
-    reverse: false
-  },
-  {
-    id: '4',
-    name: 'Galaxy 14',
-    type: 'communication',
-    angle: 350,
-    reverse: false
-  },
-  {
-    id: '5',
-    name: 'GPS IIR-11',
-    type: 'communication',
-    angle: 200,
-    reverse: true
-  }
-];
-

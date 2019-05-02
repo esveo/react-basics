@@ -36,7 +36,7 @@ export const satelliteSelectExerciseSlides = [
             <Code>reverse</Code>: boolean
           </ListItem>
           <ListItem>
-            <Code>speed</Code>: number (0 - 5)
+            <Code>angle</Code>: number (0 - 360)
           </ListItem>
           <ListItem>
             <Code>type</Code>: 'communication' | 'military' | 'science'

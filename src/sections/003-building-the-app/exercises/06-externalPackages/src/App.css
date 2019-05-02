@@ -26,32 +26,12 @@
   flex: 0 0 auto;
 }
 
-.satellite-select ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  overflow: auto;
-  flex: 1 1 auto;
-}
-
-.satellite-select button {
-  flex: 0 0 auto;
-}
-
-.satellite-select li {
-  cursor: pointer;
-  padding: 5px 10px;
-}
-
-.satellite-select li:hover {
-  background: #313343;
-}
-
-.satellite-select li.__selected {
-  background: #186ab3;
-}
-
 .satellite-details {
   padding: 5px 10px;
+}
+
+.satellite-visualisation {
+  height: 100%;
+  flex: 1 1 0;
+  overflow: hidden;
 }

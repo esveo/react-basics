@@ -3,11 +3,13 @@ import { usingSmallerComponentsSolution } from './02-usingSmallerComponents/solu
 import { satelliteFormSolution } from './03-satelliteForm/solution';
 import { sideEffectsSolution } from './04-sideEffects/solution';
 import { serverCommunicationSolution } from './05-serverCommunication/solution';
+import { externalPackagesSolution } from './06-externalPackages/solution';
 
 export const buildingTheAppSolutions = [
   satelliteSelectSolution,
   usingSmallerComponentsSolution,
   satelliteFormSolution,
   sideEffectsSolution,
-  serverCommunicationSolution
+  serverCommunicationSolution,
+  externalPackagesSolution
 ];

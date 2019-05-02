@@ -1,3 +1,4 @@
+import { externalPackagesSlides } from './externalPackages';
 import { satelliteFormSlides } from './satelliteForm';
 import { satelliteSelectSlides } from './satelliteSelect';
 import { serverCommunicationSlides } from './serverCommunication';
@@ -9,5 +10,6 @@ export const buildingTheAppSlides = [
   ...usingSmallerComponentsSlides,
   ...satelliteFormSlides,
   ...sideEffectsSlides,
-  ...serverCommunicationSlides
+  ...serverCommunicationSlides,
+  ...externalPackagesSlides
 ];

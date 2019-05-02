@@ -42,7 +42,7 @@ export const satelliteFormExerciseSlides = [
         <Code>SatelliteForm</Code> component and initialize it to:
         <br />
         <Code>
-          {'{ name: "", reverse: false, speed: 1, type: "communication" }'}
+          {'{ name: "", reverse: false, angle: 0, type: "communication" }'}
         </Code>
       </ListItem>
 
@@ -73,7 +73,7 @@ export const satelliteFormExerciseSlides = [
             reverse: <Code>&lt;input type="checkbox"&gt;</Code>
           </ListItem>
           <ListItem>
-            speed: <Code>&lt;input type="range"&gt;</Code>
+            angle: <Code>&lt;input type="range"&gt;</Code>
           </ListItem>
           <ListItem>
             type: <Code>&lt;select&gt;</Code>

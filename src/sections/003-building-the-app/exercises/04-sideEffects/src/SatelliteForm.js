@@ -6,7 +6,7 @@ import './SatelliteForm.css';
 const defaultFormState = {
   name: '',
   reverse: false,
-  speed: 1,
+  angle: 1,
   type: 'communication'
 };
 
@@ -65,14 +65,14 @@ export function SatelliteForm(props) {
         </label>
       </div>
       <div className="satellite-form--field-wrapper">
-        <label htmlFor="speed">Speed</label>
+        <label htmlFor="angle">Angle</label>
         <input
           type="range"
-          min="0.2"
-          step="0.2"
-          max="5"
-          id="speed"
-          value={formState.speed}
+          min="0"
+          step="1"
+          max="360"
+          id="angle"
+          value={formState.angle}
           onChange={e => handleChange(Number(e.target.value), e.target.id)}
         />
       </div>
@@ -112,7 +112,7 @@ SatelliteForm.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     reverse: PropTypes.bool.isRequired,
-    speed: PropTypes.number.isRequired,
+    angle: PropTypes.number.isRequired,
     type: PropTypes.oneOf(['communication', 'military', 'science']).isRequired
   })
 };
