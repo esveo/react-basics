@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { App } from './App';
 
 /**
@@ -8,5 +9,10 @@ import { App } from './App';
  * document.getElementById('root')
  */
 export const init = container => {
-  ReactDOM.render(<App />, container);
+  ReactDOM.render(
+    <Router>
+      <Route path="/:satelliteId" children={(routerProps) => <App {...routerProps} />} />
+    </Router>,
+    container
+  );
 };

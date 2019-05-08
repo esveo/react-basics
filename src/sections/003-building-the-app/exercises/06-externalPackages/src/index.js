@@ -8,18 +8,5 @@ import { App } from './App';
  * document.getElementById('root')
  */
 export const init = container => {
-  let counter = 0;
-
-  function incrementAndRender() {
-    counter++;
-    ReactDOM.render(
-      <App counter={counter} increment={incrementAndRender} />,
-      container
-    );
-  }
-
-  ReactDOM.render(
-    <App counter={counter} increment={incrementAndRender} />,
-    container
-  );
+  ReactDOM.render(<App />, container);
 };
