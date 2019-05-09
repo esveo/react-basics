@@ -20,7 +20,8 @@
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
-    "spectacle": "^5.4.0"
+    "spectacle": "^5.4.0",
+    "unstated-next": "^1.0.1"
   },
   "scripts": {
     "start": "cross-env PORT=3001 react-scripts start",
