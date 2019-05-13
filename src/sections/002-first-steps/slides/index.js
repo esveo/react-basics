@@ -1,7 +1,7 @@
-import { dataFlowSlides } from './dataFlow';
-import { destructuringAndSpreadSlides } from './destructuringAndSpread';
-import { fromStaticJSXTOComponentsSlides } from './fromStaticJSXToComponents';
-import { introducingStateSlides } from './introducingState';
+import { fromStaticJSXTOComponentsSlides } from './01-fromStaticJSXToComponents';
+import { destructuringAndSpreadSlides } from './02-destructuringAndSpread';
+import { dataFlowSlides } from './03-dataFlow';
+import { introducingStateSlides } from './04-introducingState';
 
 export const firstStepsSlides = [
   ...fromStaticJSXTOComponentsSlides,
