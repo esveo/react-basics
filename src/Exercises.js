@@ -23,17 +23,11 @@ export function Exercises() {
                 >
                   <ExercisesContainer>
                     <h1>Exercises</h1>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Exercise</th>
-                          <th>Solution Result</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+                    <ExercisesTable>
+                      <ExercisesList>
                         {allSolutions.map((solution, index) => (
-                          <tr key={index}>
-                            <td>
+                          <Exercise key={index}>
+                            <ExercisesName>
                               <Link
                                 to="/slides"
                                 onClick={e => {
@@ -42,19 +36,19 @@ export function Exercises() {
                                   );
                                 }}
                               >
-                                {index + 1}. {solution.name}
+                                <ExerciseNumber>{index + 1}.</ExerciseNumber>
+                                {solution.name}
                               </Link>
-                            </td>
-                            <td>
+                            </ExercisesName>
+                            <ExercisesResult>
                               <Link to={pathToSolution(solution.thunk)}>
                                 Result
                               </Link>
-                            </td>
-                          </tr>
+                            </ExercisesResult>
+                          </Exercise>
                         ))}
-                      </tbody>
-                    </table>
-                    <ul />
+                      </ExercisesList>
+                    </ExercisesTable>
                   </ExercisesContainer>
                 </Header>
               )}
@@ -95,16 +89,42 @@ const ExercisesContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.4em;
+  overflow: hidden;
 
-  thead {
-    font-weight: bold;
+  h1 {
+    flex: 0 0 auto;
   }
+`;
 
-  td,
-  th {
-    padding: 5px 20px;
-    text-align: left;
-  }
+const ExercisesTable = styled.div`
+  height: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+`;
+const ExercisesList = styled.ul`
+  flex: 1 1 auto;
+  overflow: auto;
+  height: 100%;
+  padding: 0;
+`;
+const ExercisesName = styled.div`
+  width: 20em;
+`;
+const ExercisesResult = styled.div`
+  width: 10em;
+`;
+const Exercise = styled.li`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 0.8em;
+`;
+
+const ExerciseNumber = styled.span`
+  display: inline-block;
+  width: 2em;
 `;
 
 function Solution({ solution }) {
