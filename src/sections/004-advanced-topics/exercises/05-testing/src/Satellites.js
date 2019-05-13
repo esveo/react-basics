@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useMemo, useReducer } from 'react';
 import { createContainer } from 'unstated-next';
 import {
   createSatellite,
@@ -9,7 +9,7 @@ import {
 
 const initialSatellitesState = [];
 
-function satelliteReducer(state, action) {
+export function satelliteReducer(state, action) {
   switch (action.type) {
     case 'SATELLITES_LOADED':
       return action.satellites;
@@ -53,7 +53,11 @@ function useSatellites() {
     dispatch({ type: 'SATELLITE_DELETED', satellite });
   }
 
-  return { satellites, save, remove };
+  const contextValue = useMemo(() => ({ satellites, save, remove }), [
+    satellites
+  ]);
+
+  return contextValue;
 }
 
 export const Satellites = createContainer(useSatellites);

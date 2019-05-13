@@ -16,7 +16,8 @@ export const performanceExerciseSlides = [
       <ListItem>
         Display the sum of all numbers from 1 to 1e9 (1 billion) above all
         satellites in <Code>SatelliteSelect</Code>. Calculate this number in a
-        separate function that you call from the <Code>SatelliteSelect</Code>
+        separate function that you call from the <Code>SatelliteSelect</Code>{' '}
+        function.
       </ListItem>
       <ListItem>
         Check the performance profiler of your browser and look for bottlenecks

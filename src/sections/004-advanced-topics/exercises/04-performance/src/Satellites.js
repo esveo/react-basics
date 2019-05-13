@@ -13,7 +13,7 @@ function satelliteReducer(state, action) {
   switch (action.type) {
     case 'SATELLITES_LOADED':
       return action.satellites;
-    case 'SATELLITE_CREADED':
+    case 'SATELLITE_CREATED':
       return [...state, action.satellite];
     case 'SATELLITE_UPDATED':
       return state.map(s =>
