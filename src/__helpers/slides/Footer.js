@@ -1,10 +1,10 @@
 import styled from '@emotion/styled/macro';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from './Link';
 import { Logo } from './Logo';
+import { SlideNumber } from './SlideNumber';
 
 export function Footer() {
   return (
@@ -12,19 +12,12 @@ export function Footer() {
       <Link to="/">
         <FontAwesomeIcon size="sm" icon={faHome} />
       </Link>
-      <SlideNumber />
+      <SlideNumber>
+        {number => <SlideNumberText>{number}</SlideNumberText>}
+      </SlideNumber>
       <Logo />
     </FooterContainer>
   );
-}
-
-class SlideNumber extends React.Component {
-  static contextTypes = {
-    slideHash: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  };
-  render() {
-    return <SlideNumberText>{this.context.slideHash}</SlideNumberText>;
-  }
 }
 
 const SlideNumberText = styled('span')`

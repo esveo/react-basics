@@ -10,9 +10,11 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { meetingReactExerciseSlides } from '../exercises/02-meetingReact/slides';
 
 export const meetingReactSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text={`Meeting React ${dash} Pure React`} />
     <Heading>

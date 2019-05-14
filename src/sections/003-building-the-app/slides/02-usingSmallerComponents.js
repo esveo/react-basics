@@ -3,9 +3,11 @@ import { Slide } from 'spectacle';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { usingSmallerComponentsExerciseSlides } from '../exercises/02-usingSmallerComponents/slides';
 
 export const usingSmallerComponentsSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="React's goal: Smaller composable components" />
     <Heading>TODO</Heading>

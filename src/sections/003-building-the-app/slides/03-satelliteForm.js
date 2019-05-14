@@ -4,9 +4,11 @@ import { dash } from '../../../__helpers/dash';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { satelliteFormExerciseSlides } from '../exercises/03-satelliteForm/slides';
 
 export const satelliteFormSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="Reminder: One way data flow" />
     <Heading>TODO</Heading>

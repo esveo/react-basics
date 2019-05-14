@@ -4,9 +4,11 @@ import { dash } from '../../../__helpers/dash';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { sideEffectsExerciseSlides } from '../exercises/04-sideEffects/slides';
 
 export const sideEffectsSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="Reminder: Render is a pure function" />
     <Heading>TODO</Heading>

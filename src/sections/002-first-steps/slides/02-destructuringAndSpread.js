@@ -3,8 +3,10 @@ import { Slide } from 'spectacle';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 
 export const destructuringAndSpreadSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text={`Destructuring`} tag="JS recap" />
     <Heading>TODO</Heading>

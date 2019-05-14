@@ -3,9 +3,11 @@ import { Slide } from 'spectacle';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { reducerPatternExerciseSlides } from '../exercises/03-reducerPattern/slides';
 
 export const reducerPatternSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="Previously: useState" />
     <Heading>TODO</Heading>

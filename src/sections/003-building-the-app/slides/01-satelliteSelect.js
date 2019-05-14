@@ -4,9 +4,11 @@ import { dash } from '../../../__helpers/dash';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { satelliteSelectExerciseSlides } from '../exercises/01-satelliteSelect/slides';
 
 export const satelliteSelectSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="Building Satellite Control" />
     <Heading>TODO</Heading>

@@ -3,6 +3,7 @@ import { Deck, Heading, Slide, Text } from 'spectacle';
 import { allSlides } from './sections/allSlides';
 import { Logo } from './__helpers/slides/Logo';
 import { ReactLogo } from './__helpers/slides/ReactLogo';
+import { SlideNumberProvider } from './__helpers/slides/SlideNumber';
 import { theme } from './__helpers/slides/theme';
 
 export function Slides() {
@@ -23,7 +24,18 @@ export function Slides() {
           by <Logo />
         </Text>
       </Slide>
-      {allSlides.map((e, i) => React.cloneElement(e, { key: i }))}
+      {allSlides.map(attachKeyAndSlide)}
     </Deck>
   );
+}
+
+function attachKeyAndSlide(element, index) {
+  return React.cloneElement(element, {
+    key: index,
+    children: (
+      <SlideNumberProvider value={index + 1}>
+        {element.props.children}
+      </SlideNumberProvider>
+    )
+  });
 }

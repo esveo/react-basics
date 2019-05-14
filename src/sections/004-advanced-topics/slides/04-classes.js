@@ -4,8 +4,10 @@ import { Code } from '../../../__helpers/slides/Code';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 
 export const classesSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="Previously: functions with useState and useEffect" />
     <Heading>TODO</Heading>

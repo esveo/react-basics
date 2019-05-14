@@ -8,9 +8,11 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { introducingStateExerciseSlides } from '../exercises/03-introducingState/slides';
 
 export const introducingStateSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="State in the component tree" />
     <Heading>TODO</Heading>

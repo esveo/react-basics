@@ -3,9 +3,11 @@ import { Slide } from 'spectacle';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { serverCommunicationExerciseSlides } from '../exercises/05-serverCommunication/slides';
 
 export const serverCommunicationSlides = [
+  getTOCSlide(),
   <Slide>
     <Header text="3 Tier architecture" />
     <Heading>TODO</Heading>
