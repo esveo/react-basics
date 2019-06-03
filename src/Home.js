@@ -2,11 +2,13 @@ import styled from '@emotion/styled/macro';
 import React from 'react';
 import { Link } from './__helpers/slides/Link';
 import { Logo } from './__helpers/slides/Logo';
+import { Planets } from './__helpers/slides/Planets';
 import { ReactLogo } from './__helpers/slides/ReactLogo';
 
 export function Home() {
   return (
     <Wrapper>
+      <Planets />
       <ReactLogo style={{ height: 100 }} />
       <h1>React Basics</h1>
       <p>
@@ -34,6 +36,10 @@ const Wrapper = styled.div`
   overflow: hidden;
   padding: 0;
   margin: 0;
+
+  * {
+    position: relative;
+  }
 
   h1 {
     font-size: 10em;
