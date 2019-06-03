@@ -21,13 +21,15 @@ export function Slides() {
     >
       <Slide bgColor="secondary">
         <Planets />
-        <ReactLogo style={{ height: 100 }} />
-        <Heading size={1} fit textColor="primary">
-          React Basics
-        </Heading>
-        <Text margin="1em 0 0" textColor="primary" bold>
-          by <Logo />
-        </Text>
+        <Foreground>
+          <ReactLogo style={{ height: 100 }} />
+          <Heading size={1} fit textColor="primary">
+            React Basics
+          </Heading>
+          <Text margin="1em 0 0" textColor="primary" bold>
+            by <Logo />
+          </Text>
+        </Foreground>
       </Slide>
       {allSlides.map(attachKeyAndSlide)}
     </Deck>
@@ -61,6 +63,11 @@ const SlideBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+`;
+
+const Foreground = styled.div`
+  position: relative;
+  z-index: 1;
 `;
 
 const SlideContent = styled.div`
