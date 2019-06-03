@@ -1,3 +1,4 @@
+import SatelliteVisualisation from '@esveo/satellite-visualisation';
 import React from 'react';
 import { Slide } from 'spectacle';
 import { Footer } from '../../../../__helpers/slides/Footer';
@@ -6,12 +7,11 @@ import { ALink, Link } from '../../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../../__helpers/slides/List';
 import { pathToSolution } from '../../../../__helpers/solutions/pathToSolution';
 import { key } from './key';
-import SatelliteVisualisation from '@esveo/satellite-visualisation';
 
 export const externalPackagesExerciseSlides = [
   <Slide>
     <Header text={`Integrate @esveo/satellite-visualisation`} tag="Exercise" />
-    <div style={{ height: 300 }}>
+    <div style={{ height: '15em', width: '40em' }}>
       <SatelliteVisualisation
         satellites={[
           {

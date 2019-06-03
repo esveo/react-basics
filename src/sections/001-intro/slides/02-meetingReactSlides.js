@@ -25,7 +25,7 @@ export const meetingReactSlides = [
 
   <Slide>
     <Header text={`Meeting React ${dash} Pure React`} />
-    <Heading fit>
+    <Heading>
       data <FontAwesomeIcon icon={faLongArrowAltRight} /> UI-Description
     </Heading>
     <Footer />
@@ -51,7 +51,7 @@ export const meetingReactSlides = [
 
   <Slide>
     <Header
-      text={`arrow functions vs. function declarations vs. function expressions`}
+      text={`functions: arrow vs. declarations vs. expressions`}
       tag="JS recap"
     />
     <Heading>TODO</Heading>

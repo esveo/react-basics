@@ -11,6 +11,6 @@ export const CodeBlock = styled(p => <CodePane {...p} theme="external" />)`
   }
 
   .prism-code {
-    border-radius: 10px;
+    border-radius: 0.5em;
   }
 `;

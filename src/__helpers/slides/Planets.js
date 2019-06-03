@@ -1,5 +1,5 @@
+import styled from '@emotion/styled/macro';
 import React from 'react';
-import styled from 'react-emotion';
 
 export function Planets() {
   const dimensionsRef = React.useRef({ width: 0, height: 0 });
@@ -15,7 +15,7 @@ export function Planets() {
     let speed = 0.02;
     let currentPowerConstant = 0.01;
 
-    const planets = Array(50)
+    const planets = Array(25)
       .fill(0)
       .map(i => initPlanet());
 
@@ -76,9 +76,6 @@ export function Planets() {
     }
 
     function updatePlanet(p) {
-      // if (Math.abs(p.dx) > 1 / (p.r * 10)) p.dx *= 0.99;
-      // if (Math.abs(p.dy) > 1 / (p.r * 10)) p.dy *= 0.99;
-
       p.x += p.dx;
       p.y += p.dy;
 
@@ -105,8 +102,9 @@ export function Planets() {
       }
     }
 
-    function lineBetween(a, b, maxDistForLink = 10) {
+    function lineBetween(a, b, maxDistForLink = 20) {
       const dist = Math.hypot(a.y - b.y, a.x - b.x);
+      if (dist > maxDistForLink) return;
       ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(
         maxDistForLink - dist,
         0
@@ -122,10 +120,10 @@ export function Planets() {
     }
   }, []);
 
-  return <Canvas width={width} height={height} innerRef={canvasRef} />;
+  return <Canvas width={width} height={height} ref={canvasRef} />;
 }
 
-const Canvas = styled('canvas')`
+const Canvas = styled.canvas`
   background: linear-gradient(rgb(31, 92, 139) 0%, rgb(20, 66, 101) 100%);
   position: fixed;
   top: 0;

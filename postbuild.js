@@ -32,7 +32,9 @@ fse.copyFileSync(
 );
 
 async function exportPDF() {
-  const b = await puppeteer.launch();
+  const b = await puppeteer.launch({
+    defaultViewport: { width: 1920, height: 1080 }
+  });
   const p = await b.newPage();
   await p.goto(path.join(__dirname, 'build/index.html'), {
     waitUntil: 'networkidle2'
@@ -47,7 +49,8 @@ async function exportPDF() {
     path: path.join(__dirname, 'build/slides.pdf'),
     printBackground: true,
     landscape: true,
-    width: '800px'
+    height: '1920px',
+    width: '1080px'
   });
   b.close();
 }

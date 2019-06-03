@@ -1,16 +1,54 @@
 import React from 'react';
 import { Slide } from 'spectacle';
 import { dash } from '../../../__helpers/dash';
+import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { List, ListItem } from '../../../__helpers/slides/List';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { initialSetupExerciseSlides } from '../exercises/01-initialSetup/slides';
 
 export const preambelSlides = [
   <Slide>
     <Header text="About us" />
-    <Heading caps>TODO</Heading>
+    <Columns>
+      <Column>
+        <ColumnHead>
+          Digital
+          <br />
+          Solutions
+        </ColumnHead>
+        <List>
+          <ListItem>
+            planning, controlling, reporting, information management and
+            processes
+          </ListItem>
+        </List>
+      </Column>
+      <Column>
+        <ColumnHead>
+          Information
+          <br />
+          Security
+        </ColumnHead>
+        <List>
+          <ListItem>Test</ListItem>
+          <ListItem>Test2</ListItem>
+        </List>
+      </Column>
+      <Column>
+        <ColumnHead>
+          Software
+          <br />
+          Technology
+        </ColumnHead>
+        <List>
+          <ListItem>Test</ListItem>
+          <ListItem>Test2</ListItem>
+        </List>
+      </Column>
+    </Columns>
     <Footer />
   </Slide>,
 

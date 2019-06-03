@@ -61,6 +61,6 @@ const TagContainer = styled.div`
     top: 0;
     transform-origin: 0 0;
     transform: rotate(-25deg);
-    width: 100px;
+    width: 5em;
   }
 `;

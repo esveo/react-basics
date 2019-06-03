@@ -1,7 +1,9 @@
+import styled from '@emotion/styled/macro';
 import React from 'react';
 import { Deck, Heading, Slide, Text } from 'spectacle';
 import { allSlides } from './sections/allSlides';
 import { Logo } from './__helpers/slides/Logo';
+import { ObjectFitContain } from './__helpers/slides/ObjectFitContain';
 import { Planets } from './__helpers/slides/Planets';
 import { ReactLogo } from './__helpers/slides/ReactLogo';
 import { SlideNumberProvider } from './__helpers/slides/SlideNumber';
@@ -15,6 +17,7 @@ export function Slides() {
       progress="none"
       theme={theme}
       showFullscreenControl={false}
+      controls={false}
     >
       <Slide bgColor="secondary">
         <Planets />
@@ -22,7 +25,7 @@ export function Slides() {
         <Heading size={1} fit textColor="primary">
           React Basics
         </Heading>
-        <Text margin="10px 0 0" textColor="primary" bold>
+        <Text margin="1em 0 0" textColor="primary" bold>
           by <Logo />
         </Text>
       </Slide>
@@ -36,8 +39,39 @@ function attachKeyAndSlide(element, index) {
     key: index,
     children: (
       <SlideNumberProvider value={index + 1}>
-        {element.props.children}
+        <SlideBackground>
+          <ObjectFitContain>
+            {props => (
+              <SlideContent {...props}>
+                <div>{element.props.children}</div>
+              </SlideContent>
+            )}
+          </ObjectFitContain>
+        </SlideBackground>
       </SlideNumberProvider>
     )
   });
 }
+
+const SlideBackground = styled.div`
+  background: black;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const SlideContent = styled.div`
+  position: relative;
+  font-size: ${p => p.style.width * 0.019}px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 4em;
+  max-width: 100%;
+  max-height: 100%;
+`;

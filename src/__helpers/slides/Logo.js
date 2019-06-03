@@ -3,7 +3,7 @@ import React from 'react';
 import { ReactComponent as SVGLogo } from './esveo-logo.svg';
 
 export const LogoSVG = styled(SVGLogo)`
-  height: 24px;
+  height: 1em;
   path {
     fill: rgb(63, 167, 254);
   }
