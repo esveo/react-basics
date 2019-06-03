@@ -11,7 +11,10 @@ import { key } from './key';
 
 export const performanceExerciseSlides = [
   <Slide>
-    <Header text="Replace useState with useReducer" tag="Exercise" />
+    <Header
+      text="Identifying and fixing performance bottlenecks"
+      tag="Exercise"
+    />
     <List>
       <ListItem>
         Display the sum of all numbers from 1 to 1e9 (1 billion) above all

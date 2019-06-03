@@ -4,6 +4,7 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
+import { performanceExerciseSlides } from '../exercises/04-performance/slides';
 
 export const performanceSlides = [
   getTOCSlide(),
@@ -21,5 +22,7 @@ export const performanceSlides = [
     <Header text="Steps" />
     <Heading>TODO</Heading>
     <Footer />
-  </Slide>
+  </Slide>,
+
+  ...performanceExerciseSlides
 ];
