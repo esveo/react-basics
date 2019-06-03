@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router-dom';
 import { allSolutions } from './sections/allSolutions';
 import { Link, NavLink } from './__helpers/slides/Link';
+import { LinkToSlides } from './__helpers/slides/LinkToSlide';
 import { pathToSolution } from './__helpers/solutions/pathToSolution';
 
 export function Exercises() {
@@ -28,17 +29,10 @@ export function Exercises() {
                         {allSolutions.map((solution, index) => (
                           <Exercise key={index}>
                             <ExercisesName>
-                              <Link
-                                to="/slides"
-                                onClick={e => {
-                                  window.location.replace(
-                                    solution.exercisePath
-                                  );
-                                }}
-                              >
+                              <LinkToSlides slides={solution.exerciseSlides}>
                                 <ExerciseNumber>{index + 1}.</ExerciseNumber>
                                 {solution.name}
-                              </Link>
+                              </LinkToSlides>
                             </ExercisesName>
                             <ExercisesResult>
                               <Link to={pathToSolution(solution.thunk)}>
@@ -166,14 +160,9 @@ function Header({ children, breadcrumbs = [], solution }) {
           </React.Fragment>
         ))}
         {solution && (
-          <Link
-            to="/slides"
-            onClick={e => {
-              window.location.replace(solution.exercisePath);
-            }}
-          >
+          <LinkToSlides slides={solution.exerciseSlides}>
             (Exercise Slides)
-          </Link>
+          </LinkToSlides>
         )}
       </HeaderNav>
       <HeaderChildrenContainer>{children}</HeaderChildrenContainer>
