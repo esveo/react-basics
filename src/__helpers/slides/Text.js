@@ -5,5 +5,6 @@ export const Text = styled(SpectacleText)`
   && {
     font-family: 'Klavika';
     margin-bottom: 1em;
+    font-size: 1em;
   }
 `;
