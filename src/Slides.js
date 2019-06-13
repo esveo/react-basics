@@ -1,12 +1,14 @@
 import styled from '@emotion/styled/macro';
 import React from 'react';
-import { Deck, Heading, Slide, Text } from 'spectacle';
+import { Deck, Slide } from 'spectacle';
 import { allSlides } from './sections/allSlides';
+import { Heading } from './__helpers/slides/Heading';
 import { Logo } from './__helpers/slides/Logo';
 import { ObjectFitContain } from './__helpers/slides/ObjectFitContain';
 import { Planets } from './__helpers/slides/Planets';
 import { ReactLogo } from './__helpers/slides/ReactLogo';
 import { SlideNumberProvider } from './__helpers/slides/SlideNumber';
+import { Text } from './__helpers/slides/Text';
 import { theme } from './__helpers/slides/theme';
 
 export function Slides() {
@@ -23,9 +25,7 @@ export function Slides() {
         <Planets />
         <Foreground>
           <ReactLogo style={{ height: 100 }} />
-          <Heading size={1} fit textColor="primary">
-            React Basics
-          </Heading>
+          <Heading textColor="primary">React Basics</Heading>
           <Text margin="1em 0 0" textColor="primary" bold>
             by <Logo />
           </Text>
@@ -44,9 +44,9 @@ function attachKeyAndSlide(element, index) {
         <SlideBackground>
           <ObjectFitContain>
             {props => (
-              <SlideContent {...props}>
-                <div>{element.props.children}</div>
-              </SlideContent>
+              <SlideContentWrapper {...props}>
+                <SlideContent>{element.props.children}</SlideContent>
+              </SlideContentWrapper>
             )}
           </ObjectFitContain>
         </SlideBackground>
@@ -68,9 +68,14 @@ const SlideBackground = styled.div`
 const Foreground = styled.div`
   position: relative;
   z-index: 1;
+
+  &&& ${Heading} {
+    font-size: 4em;
+    margin: 0;
+  }
 `;
 
-const SlideContent = styled.div`
+const SlideContentWrapper = styled.div`
   position: relative;
   font-size: ${p => p.style.width * 0.019}px;
   background: white;
@@ -81,4 +86,8 @@ const SlideContent = styled.div`
   padding: 3em 4em;
   max-width: 100%;
   max-height: 100%;
+`;
+
+const SlideContent = styled.div`
+  width: 100%;
 `;

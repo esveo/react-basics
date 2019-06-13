@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/macro';
 import React from 'react';
-import { Heading } from 'spectacle';
+import { Heading } from './Heading';
 
 export function Header({ text, tag }) {
   return (

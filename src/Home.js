@@ -48,10 +48,6 @@ const Wrapper = styled.div`
     font-size: 2.8em;
     margin: 0;
   }
-
-  > * {
-    position: relative;
-  }
 `;
 
 const Foreground = styled.div`
