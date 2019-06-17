@@ -16,24 +16,23 @@ export const fromStaticJSXToComponentsExerciseSlides = [
         Add new files <Code>Link.js</Code> and <Code>Link.css</Code>
       </ListItem>
       <ListItem>
-        Implement the Link component that takes the following props
+        Implement and export the Link component that takes the following props
         <List>
           <ListItem>
-            <Code>href</Code>: the target link
+            <Code>href</Code>: the target url
           </ListItem>
           <ListItem>
             <Code>name</Code>: the text that will be displayed
           </ListItem>
         </List>
-        Don't forget <Code>import React from 'react'</Code>
       </ListItem>
       <ListItem>
-        Forward the href prop to an <Code>a</Code> tag and add the className
-        prop <Code>app-link</Code>
+        Forward the href prop to an <Code>a</Code> tag, add the className{' '}
+        <Code>app-link</Code> and pass the name as children
       </ListItem>
       <ListItem>
         Import <Code>Link.css</Code> from <Code>Link.js</Code> and apply some
-        styles
+        styles to the app-link class.
       </ListItem>
       <ListItem>Export the Link component</ListItem>
       <ListItem>
@@ -45,7 +44,7 @@ export const fromStaticJSXToComponentsExerciseSlides = [
         Component and export it
       </ListItem>
       <ListItem>
-        Use your newly create <Code>Link</Code> component (don't forget the
+        Use your newly created <Code>Link</Code> component (don't forget the
         import)
       </ListItem>
       <ListItem>
