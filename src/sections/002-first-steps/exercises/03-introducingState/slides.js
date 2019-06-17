@@ -13,6 +13,10 @@ export const introducingStateExerciseSlides = [
     <Header text={`Using state`} tag="Exercise" />
     <List>
       <ListItem>
+        Remove everything but the rendering of the App component from{' '}
+        <Code>index.js</Code>
+      </ListItem>
+      <ListItem>
         Create variables <Code>counter</Code> and <Code>setCounter</Code> in the{' '}
         <Code>App</Code> component using <Code>useState</Code> with an initial
         value of <Code>0</Code>

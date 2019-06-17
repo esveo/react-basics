@@ -60,7 +60,7 @@ export const dataFlowExerciseSlides = [
         <Code>incrementCounter</Code>. Pass this reference as onClick callback
         to the <Code>Button</Code>:<br />
         <Code>
-          {'<Button onClick={props.increment}>{props.counter}</Button>'}
+          {'<Button onClick={props.incrementCounter}>{props.counter}</Button>'}
         </Code>
       </ListItem>
       <ListItem>
@@ -68,8 +68,8 @@ export const dataFlowExerciseSlides = [
         <Code>0</Code>. (use <Code>let</Code>)
       </ListItem>
       <ListItem>
-        Add function in the <Code>index.js</Code> that increments the{' '}
-        <Code>counter</Code> variable.
+        Declare a function <Code>incrementAndRender</Code> in the{' '}
+        <Code>index.js</Code> that increments the <Code>counter</Code> variable.
       </ListItem>
       <ListItem>
         After incrementing, this function should call{' '}
@@ -77,7 +77,10 @@ export const dataFlowExerciseSlides = [
       </ListItem>
       <ListItem>
         Pass this function to the <Code>App</Code> component:
-        <Code>{'<App counter={0} increment={incrementAndRender} />'}</Code>
+        <br />
+        <Code>
+          {'<App counter={counter} increment={incrementAndRender} />'}
+        </Code>
       </ListItem>
       <ListItem>
         Compare your result with the{' '}

@@ -4,18 +4,66 @@ import { Slide } from 'spectacle';
 import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
+import { Column, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { introducingStateExerciseSlides } from '../exercises/03-introducingState/slides';
+import { ReactComponent as DataFlowSVG } from './data-flow.svg';
+import { ReactComponent as IntroducingStateSVG } from './introducing-state.svg';
 
 export const introducingStateSlides = [
   getTOCSlide(),
   <Slide>
     <Header text="State in the component tree" />
-    <Heading>TODO</Heading>
+    <Columns align="center">
+      <Column weight={1}>
+        <Text left>Problems with global state:</Text>
+        <List>
+          <ListItem>
+            Every state update <b>rerenders the whole React-Tree</b>.
+          </ListItem>
+          <ListItem>Every state has to be declared globally.</ListItem>
+          <ListItem>
+            <b>No encapsulation</b> of local states possible.
+          </ListItem>
+        </List>
+      </Column>
+      <Column weight={2} p={0}>
+        <DataFlowSVG />
+      </Column>
+    </Columns>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="State in the component tree" />
+    <Columns align="center">
+      <Column weight={1}>
+        <Text left>
+          Solution: <b>Component state</b>
+        </Text>
+        <List>
+          <ListItem>
+            State is declared and managed as close to the bottom of the tree as
+            possible
+          </ListItem>
+          <ListItem>State does not travel through many components.</ListItem>
+          <ListItem>
+            Updates trigger <b>rerender on fewer components</b>.
+          </ListItem>
+          <ListItem>
+            Statefull <b>logic is encapsulated</b> in components.
+          </ListItem>
+        </List>
+      </Column>
+      <Column weight={2} p={0}>
+        <IntroducingStateSVG />
+      </Column>
+    </Columns>
     <Footer />
   </Slide>,
 
@@ -47,7 +95,22 @@ export const introducingStateSlides = [
 
   <Slide>
     <Header text={`Recap ${dash} React`} />
-    <Heading>TODO</Heading>
+    <Text left>React ...</Text>
+    <List>
+      <ListItem>
+        ... allows you to think of your UI from a <b>data first</b> approach ...
+      </ListItem>
+      <ListItem>
+        ... while splitting your logic into <b>small encapsulated components</b>{' '}
+        ...
+      </ListItem>
+      <ListItem>
+        ... that communicate via <b>props and events/callbacks</b>...
+      </ListItem>
+      <ListItem>
+        ... and can manage <b>local state</b> to keep the global scope clean.
+      </ListItem>
+    </List>
     <Footer />
   </Slide>
 ];
