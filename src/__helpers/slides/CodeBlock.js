@@ -4,9 +4,9 @@ import { CodePane } from 'spectacle';
 
 export const CodeBlock = styled(p => <CodePane {...p} theme="external" />)`
   && {
-    font-size: 0.84em;
+    font-size: 0.75em;
     max-height: 80vh;
-    margin-top: 2em;
+    margin-top: ${p => p.m || '2em'};
     overflow: auto;
   }
 

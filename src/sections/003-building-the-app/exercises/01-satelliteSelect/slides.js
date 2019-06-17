@@ -45,9 +45,9 @@ export const satelliteSelectExerciseSlides = [
       </ListItem>
 
       <ListItem>
-        Render the satellites as <Code>li</Code> tags inside a <Code>ul</Code>{' '}
-        tag. (use the <Code>[].map</Code> function and don't forget the{' '}
-        <Code>key</Code>)
+        Render the satellite names in <Code>li</Code> tags inside a{' '}
+        <Code>ul</Code> tag. (use the <Code>[].map</Code> function and don't
+        forget the <Code>key</Code>)
       </ListItem>
     </List>
     <Footer />
