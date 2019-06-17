@@ -1,9 +1,13 @@
+import raw from 'raw.macro';
 import React from 'react';
 import { Slide } from 'spectacle';
 import { dash } from '../../../__helpers/dash';
+import { Code } from '../../../__helpers/slides/Code';
+import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
-import { Heading } from '../../../__helpers/slides/Heading';
+import { List, ListItem } from '../../../__helpers/slides/List';
+import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { usingBuildChainExerciseSlides } from '../exercises/03-usingBuildChain/slides';
 
@@ -11,31 +15,81 @@ export const usingBuildChainSlides = [
   getTOCSlide(),
   <Slide>
     <Header text="JSX" />
-    <Heading caps>TODO</Heading>
+    <Text left>JavaScript XML or JavaScript Syntax Extension</Text>
+    <List>
+      <ListItem>One additional compilation step in the build chain.</ListItem>
+      <ListItem>
+        Allows developers to write HTML-like syntax and convert it to
+        createElement calls.
+      </ListItem>
+      <ListItem>
+        Each JSX tree is compiled into on nested function call.
+      </ListItem>
+      <ListItem>
+        No statements are allowed inside of JSX, only expressions. (no if,
+        while, for etc.)
+      </ListItem>
+      <ListItem>Expressions need to be used instead.</ListItem>
+      <ListItem>Various small differences to HTML</ListItem>
+      <ListItem>React needs to be imported!</ListItem>
+      <ListItem>
+        <b>It's still only JavaScript</b> (with nicer syntax), so all JavaScript
+        constructs are allowed
+      </ListItem>
+    </List>
     <Footer />
   </Slide>,
 
   <Slide>
+    <Header text={`JSX`} />
+    <CodeBlock
+      lang="jsx"
+      source={raw('../examples/usingBuildChainJSXCompilation.js')}
+    />
+    <Footer />
+  </Slide>,
+  <Slide>
     <Header text={`JSX ${dash} inline expressions`} />
-    <Heading caps>TODO</Heading>
+    <CodeBlock
+      lang="jsx"
+      source={raw('../examples/usingBuildChainJSXExpressions.js')}
+    />
+    <Footer />
+  </Slide>,
+  <Slide>
+    <Header text={`JSX ${dash} inline expressions`} />
+    <CodeBlock
+      lang="jsx"
+      source={raw('../examples/usingBuildChainJSXExpressions2.js')}
+    />
     <Footer />
   </Slide>,
 
   <Slide>
     <Header text={`JSX ${dash} differences to HTML`} />
-    <Heading caps>TODO</Heading>
-    <Footer />
-  </Slide>,
-
-  <Slide>
-    <Header text={`Creating your own modules`} tag="JS recap" />
-    <Heading caps>TODO</Heading>
+    <CodeBlock
+      lang="jsx"
+      source={raw('../examples/usingBuildChainJSXvsHTML.js')}
+    />
     <Footer />
   </Slide>,
 
   <Slide>
     <Header text="Styles as a module" />
-    <Heading caps>TODO</Heading>
+    <List>
+      <ListItem>Styles are treated as modules nowadays too.</ListItem>
+      <ListItem>
+        Easiest form is to import the file without importing variables:
+      </ListItem>
+      <ListItem>
+        <Code>import './App.css'</Code>
+      </ListItem>
+      <ListItem>
+        This is plain global CSS so you can use ids, classes, pseudo selectors
+        or animations.
+      </ListItem>
+      <ListItem>More options for styling in React later.</ListItem>
+    </List>
     <Footer />
   </Slide>,
 

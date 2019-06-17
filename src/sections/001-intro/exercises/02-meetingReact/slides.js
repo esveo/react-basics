@@ -16,7 +16,12 @@ export const meetingReactExerciseSlides = [
         Remove the <Code>alert</Code> line from <Code>index.js</Code>
       </ListItem>
       <ListItem>
-        Import <Code>React</Code> and <Code>ReactDOM</Code>
+        Import <Code>React</Code> from <Code>'react'</Code> and{' '}
+        <Code>ReactDOM</Code> from <Code>'react-dom'</Code>
+      </ListItem>
+      <ListItem>
+        Retrieve the DOM element with the id "root" from the document. (hint:
+        use <Code>getElementById</Code>)
       </ListItem>
       <ListItem>
         Build the description of the following app with{' '}
@@ -27,8 +32,8 @@ export const meetingReactExerciseSlides = [
             <Code>app-root</Code>
           </ListItem>
           <ListItem>
-            Create a <Code>header</Code>, <Code>main</Code> and{' '}
-            <Code>footer</Code> element inside the <Code>app-root</Code>.
+            Add a <Code>header</Code>, <Code>main</Code> and <Code>footer</Code>{' '}
+            element inside the <Code>app-root</Code>.
           </ListItem>
           <ListItem>
             Add a <Code>nav</Code> to the header.
@@ -38,6 +43,9 @@ export const meetingReactExerciseSlides = [
             inside of the nav.
           </ListItem>
         </List>
+      </ListItem>
+      <ListItem>
+        Render the description of the app into the retrieved DOM node.
       </ListItem>
       <ListItem>
         Compare your result with the{' '}
