@@ -67,16 +67,22 @@ export const satelliteFormExerciseSlides = [
         update the local component state:
         <List>
           <ListItem>
-            name: <Code>&lt;input type="text"&gt;</Code>
+            name: <Code>{'&lt;input type="text" value={...} &gt;'}</Code>
           </ListItem>
           <ListItem>
-            reverse: <Code>&lt;input type="checkbox"&gt;</Code>
+            reverse:{' '}
+            <Code>{'&lt;input type="checkbox" checked={...} &gt;'}</Code>
           </ListItem>
           <ListItem>
-            angle: <Code>&lt;input type="range"&gt;</Code>
+            angle:{' '}
+            <Code>
+              {
+                '&lt;input type="range" value={...} min="..." max="..." step="..." &gt;'
+              }
+            </Code>
           </ListItem>
           <ListItem>
-            type: <Code>&lt;select&gt;</Code>
+            type: <Code>{'&lt;select value={...} &gt;'}</Code>
           </ListItem>
         </List>
       </ListItem>

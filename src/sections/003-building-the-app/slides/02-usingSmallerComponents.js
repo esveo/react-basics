@@ -8,6 +8,7 @@ import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
+import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
@@ -141,6 +142,14 @@ export const usingSmallerComponentsSlides = [
           <ListItem>
             Checked at runtime and alerts the developer when a prop is
             missing/invalid.
+          </ListItem>
+          <ListItem>
+            <ALink
+              href="https://www.npmjs.com/package/prop-types"
+              target="_blank"
+            >
+              prop-types on npm
+            </ALink>
           </ListItem>
         </List>
       </Column>
