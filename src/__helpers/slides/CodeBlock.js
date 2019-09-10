@@ -7,7 +7,7 @@ export const CodeBlock = styled(p => (
 ))`
   && {
     font-size: 0.75em;
-    max-height: 80vh;
+    max-height: 81vh;
     margin-top: ${p => p.m || '2em'};
     overflow: auto;
   }

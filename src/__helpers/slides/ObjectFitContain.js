@@ -29,7 +29,7 @@ export function useObjectFitContain(aspectRatio = 16 / 9) {
     window.addEventListener('resize', recomputeContainStyles);
     recomputeContainStyles();
     return () => window.removeEventListener('resize', recomputeContainStyles);
-  }, []);
+  }, [recomputeContainStyles]);
 
   return { ref: domRef, style: styles };
 }

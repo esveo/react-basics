@@ -7,6 +7,7 @@ import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { Heading } from '../../../__helpers/slides/Heading';
+import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
@@ -80,6 +81,15 @@ export const sideEffectsSlides = [
         every render, an array of values can be supplied. The effect function
         will only be called when at least one of the dependency values changes.
       </ListItem>
+      <ListItem>
+        More info in this{' '}
+        <ALink
+          href="https://overreacted.io/a-complete-guide-to-useeffect/"
+          target="_new"
+        >
+          blog post
+        </ALink>
+      </ListItem>
     </List>
     <Footer />
   </Slide>,
@@ -119,11 +129,13 @@ export const sideEffectsSlides = [
 
   <Slide>
     <Header text={`useEffect ${dash} pitfalls`} />
+    <Text>Stale Closures</Text>
     <CodeBlock lang="jsx" source={raw('../examples/staleClosure.js')} />
     <Footer />
   </Slide>,
   <Slide>
     <Header text={`useEffect ${dash} pitfalls`} />
+    <Text>Referential equality of functions</Text>
     <CodeBlock
       lang="jsx"
       source={raw('../examples/referentialEqualityWithFunctions1.js')}
@@ -132,6 +144,7 @@ export const sideEffectsSlides = [
   </Slide>,
   <Slide>
     <Header text={`useEffect ${dash} pitfalls`} />
+    <Text>Referential equality of functions</Text>
     <CodeBlock
       lang="jsx"
       source={raw('../examples/referentialEqualityWithFunctions2.js')}
@@ -140,6 +153,7 @@ export const sideEffectsSlides = [
   </Slide>,
   <Slide>
     <Header text={`useEffect ${dash} pitfalls`} />
+    <Text>Referential equality of functions</Text>
     <CodeBlock
       lang="jsx"
       source={raw('../examples/referentialEqualityWithFunctions3.js')}
@@ -148,6 +162,7 @@ export const sideEffectsSlides = [
   </Slide>,
   <Slide>
     <Header text={`useEffect ${dash} pitfalls`} />
+    <Text>Referential equality of functions</Text>
     <CodeBlock
       lang="jsx"
       source={raw('../examples/referentialEqualityWithFunctions4.js')}

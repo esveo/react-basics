@@ -15,13 +15,14 @@ export const getTOCSlide = () => {
 };
 
 function TOCContentLoader({ slide }) {
-  const [content, setContent] = useState(null);
+  const [Component, setComponent] = useState(null);
 
   useEffect(() => {
     import('./TOCSlideContent').then(module => {
-      setContent(<module.TOCSlideContent slide={slide} />);
+      setComponent(() => module.TOCSlideContent);
     });
   }, []);
 
-  return content;
+  if (!Component) return null;
+  return <Component slide={slide} />;
 }
