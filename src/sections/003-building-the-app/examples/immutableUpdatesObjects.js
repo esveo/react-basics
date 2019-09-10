@@ -18,4 +18,4 @@ const added = {
 };
 
 // To remove a property, use desctructuring with spread operator
-const { a, ...removed } = user;
+const { a, ...remaining } = user;

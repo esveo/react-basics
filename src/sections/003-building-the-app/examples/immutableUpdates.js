@@ -23,4 +23,4 @@ const newUser = updateUser(user);
 const userChanged = newUser !== user; // true
 const adressChanged = newUser.adress !== user.adress; // true
 const parentChanged = newUser.parent !== user.parent; // false
-const numberChange = newUser.adress.number !== user.adress.number; // false
+const numberChanged = newUser.adress.number !== user.adress.number; // true

@@ -7,7 +7,6 @@ import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
-import { Heading } from '../../../__helpers/slides/Heading';
 import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
@@ -142,8 +141,73 @@ export const satelliteFormSlides = [
   ...satelliteFormExerciseSlides,
 
   <Slide>
-    <Header text="Form libraries" />
-    <Heading>TODO</Heading>
+    <Header text="Form state libraries" />
+    <List>
+      <ListItem>Form state can become very complex very quickly.</ListItem>
+      <ListItem>
+        States that could be usefull:
+        <List>
+          <ListItem>Current value of fields</ListItem>
+          <ListItem>Current validity of fields (derived state)</ListItem>
+          <ListItem>Have the fields been touched already?</ListItem>
+          <ListItem>Have the fields changed from their base value?</ListItem>
+        </List>
+      </ListItem>
+      <ListItem>
+        Libraries can help with these state updates
+        <List>
+          <ListItem>
+            <ALink href="https://github.com/jaredpalmer/formik" target="_new">
+              Formik
+            </ALink>
+          </ListItem>
+          <ListItem>
+            <ALink
+              href="https://github.com/final-form/react-final-form"
+              target="_new"
+            >
+              React Final Form
+            </ALink>
+          </ListItem>
+          <ListItem>Build your own library for you own special needs.</ListItem>
+        </List>
+      </ListItem>
+    </List>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Form controls" />
+    <List>
+      <ListItem>
+        In addition to state, you need to build useable, accessible form
+        controls:
+        <List>
+          <ListItem>Text input</ListItem>
+          <ListItem>Number input</ListItem>
+          <ListItem>Typeahead (text input with suggestions)</ListItem>
+          <ListItem>Dropdown select</ListItem>
+          <ListItem>Multi select</ListItem>
+          <ListItem>Radio button</ListItem>
+          <ListItem>Checkbox</ListItem>
+          <ListItem>Date picker</ListItem>
+          <ListItem>Color picker</ListItem>
+        </List>
+      </ListItem>
+      <ListItem>
+        Rule of thumb: For small projects, choose a library, for example{' '}
+        <ALink href="https://react.semantic-ui.com/" target="_new">
+          Semantic UI
+        </ALink>{' '}
+        or{' '}
+        <ALink href="https://material-ui.com/" target="_new">
+          Material UI
+        </ALink>
+      </ListItem>
+      <ListItem>
+        For larger projects: Build your own to deliver a cohesive experience
+      </ListItem>
+    </List>
     <Footer />
   </Slide>
 ];
