@@ -44,6 +44,8 @@ export const routingExerciseSlides = [
       <ListItem>
         Pull the selectedSatelliteId from <Code>match.params.satelliteId</Code>{' '}
         in the <Code>App</Code> component.
+        <br />
+        <b>Note</b>: match will be <Code>null</Code> when route is not matching.
       </ListItem>
       <ListItem>
         Change the <Code>onClick</Code> callback in the create button to

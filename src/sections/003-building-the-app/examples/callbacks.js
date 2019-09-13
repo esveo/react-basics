@@ -12,9 +12,7 @@ getGoogleResults('software academy', results => {
     loadPageContent(result, page => {
       addToIndex(page);
       findLinks(page).forEach(link => {
-        loadPageContent(link, page => {
-          addToIndex(page);
-        });
+        loadPageContent(link, page => addToIndex(page));
       });
     });
   });

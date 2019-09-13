@@ -14,28 +14,43 @@ export const simpleStateManagementExerciseSlides = [
     <Header text="Handle satellites in a separated container" tag="Exercise" />
     <List>
       <ListItem>
-        Install the package <Code>unstated-next</Code>.
-      </ListItem>
-      <ListItem>
         Create a file <Code>Satellites.js</Code>.
       </ListItem>
       <ListItem>
-        Move the satellites state and all updating functions from{' '}
-        <Code>App.js</Code> into a new <Code>useSatellites</Code> hook in{' '}
-        <Code>Satellite.js</Code>.
+        Move the satellites state, the effect that loads them and all updating
+        functions from <Code>App.js</Code> into a new <Code>useSatellites</Code>{' '}
+        hook in <Code>Satellite.js</Code>. <br />
+        <b>Note:</b> Don't forget to return the state and the updating functions
+        from this hook.
       </ListItem>
       <ListItem>
-        Create and export an unstated-container from <Code>Satellites.js</Code>{' '}
-        with your new <Code>useSatellites</Code> hook.
+        Create a React Context <Code>SatelliteContext</Code> and the
+        corresponding Provider in <Code>Satellites.js</Code>
       </ListItem>
       <ListItem>
-        Create and export an unstated-container with the name{' '}
-        <Code>Satellites</Code> from <Code>Satellites.js</Code> with your new{' '}
-        <Code>useSatellites</Code> hook.
+        Build and export a new Component <Code>GlobalSatelliteProvider</Code>{' '}
+        that uses the <Code>useSatellites</Code> hook and supplies the result to
+        the SatelliteContextProvider. <br />
+        <b>Note:</b> Don't forget to render the <Code>children</Code> prop
+        inside of the SatelliteContextProvider.
       </ListItem>
       <ListItem>
-        Add the <Code>Satellites.Container</Code> around the <Code>Route</Code>{' '}
-        in your <Code>index.js</Code>.
+        Build and export a new custom hook <Code>useGlobalSatellites</Code> in
+        which you extract the value from the <Code>SatelliteContext</Code>.
+      </ListItem>
+      <ListItem>
+        You have now built your first reusable global state container!
+      </ListItem>
+    </List>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Handle satellites in a separated container" tag="Exercise" />
+    <List>
+      <ListItem>
+        Add the <Code>GlobalSatelliteProvider</Code> around the{' '}
+        <Code>Route</Code> in your <Code>index.js</Code>
       </ListItem>
       <ListItem>
         Remove the <Code>satellites</Code> prop from{' '}
@@ -46,8 +61,9 @@ export const simpleStateManagementExerciseSlides = [
         <Code>SatelliteForm</Code>.
       </ListItem>
       <ListItem>
-        Use the <Code>Satellites</Code> container in <Code>App.js</Code>,{' '}
-        <Code>SatelliteForm.js</Code> and <Code>SatelliteSelect.js</Code>.
+        Use the <Code>useGlobalSatellites</Code> hook in <Code>App.js</Code>,{' '}
+        <Code>SatelliteForm.js</Code> and <Code>SatelliteSelect.js</Code> to
+        retrieve and update satellites.
       </ListItem>
       <ListItem>
         Compare your result with the{' '}

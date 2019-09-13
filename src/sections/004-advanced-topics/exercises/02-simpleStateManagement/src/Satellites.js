@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { createContainer } from 'unstated-next';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import {
   createSatellite,
   deleteSatellite,
@@ -36,4 +35,19 @@ function useSatellites() {
   return { satellites, save, remove };
 }
 
-export const Satellites = createContainer(useSatellites);
+const SatelliteContext = createContext();
+
+export function GlobalSatelliteProvider({ children }) {
+  const utils = useSatellites();
+  return (
+    <SatelliteContext.Provider value={utils}>
+      {children}
+    </SatelliteContext.Provider>
+  );
+}
+
+export function useGlobalSatellites() {
+  const contextValue = useContext(SatelliteContext);
+  if (!contextValue) throw new Error('No Provider for SatelliteContext found!');
+  return contextValue;
+}
