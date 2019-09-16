@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { App } from './App';
-import { Satellites } from './Satellites';
+import { GlobalSatelliteProvider } from './Satellites';
 
 /**
  * This is only needed to embed the exercises into the training-app.
@@ -12,12 +12,12 @@ import { Satellites } from './Satellites';
 export const init = container => {
   ReactDOM.render(
     <Router>
-      <Satellites.Provider>
+      <GlobalSatelliteProvider>
         <Route
           path="/:satelliteId"
           children={routerProps => <App {...routerProps} />}
         />
-      </Satellites.Provider>
+      </GlobalSatelliteProvider>
     </Router>,
     container
   );

@@ -3,11 +3,11 @@ import React from 'react';
 import './App.css';
 import { Button } from './Button';
 import { SatelliteForm } from './SatelliteForm';
-import { Satellites } from './Satellites';
+import { useGlobalSatellites } from './Satellites';
 import { SatelliteSelect } from './SatelliteSelect';
 
 export function App(props) {
-  const { satellites } = Satellites.useContainer();
+  const { satellites } = useGlobalSatellites();
   const selectedSatelliteId = props.match && props.match.params.satelliteId;
 
   const selectedSatellite = satellites.find(s => s.id === selectedSatelliteId);

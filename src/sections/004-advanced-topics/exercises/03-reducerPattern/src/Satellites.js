@@ -1,5 +1,4 @@
-import { useEffect, useReducer } from 'react';
-import { createContainer } from 'unstated-next';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import {
   createSatellite,
   deleteSatellite,
@@ -16,13 +15,15 @@ function satelliteReducer(state, action) {
     case 'SATELLITE_CREATED':
       return [...state, action.satellite];
     case 'SATELLITE_UPDATED':
-      return state.map(s =>
-        s.id === action.satellite.id ? action.satellite : s
+      return state.map(satellite =>
+        satellite.id === action.satellite.id
+          ? { ...satellite, ...action.satellite }
+          : satellite
       );
     case 'SATELLITE_DELETED':
-      return state.filter(s => s.id !== action.satellite.id);
+      return state.filter(satellite => satellite.id !== action.satellite.id);
     default:
-      throw new Error(`Unknown action type ${action.type}`);
+      return state;
   }
 }
 
@@ -56,4 +57,19 @@ function useSatellites() {
   return { satellites, save, remove };
 }
 
-export const Satellites = createContainer(useSatellites);
+const SatelliteContext = createContext();
+
+export function GlobalSatelliteProvider({ children }) {
+  const utils = useSatellites();
+  return (
+    <SatelliteContext.Provider value={utils}>
+      {children}
+    </SatelliteContext.Provider>
+  );
+}
+
+export function useGlobalSatellites() {
+  const contextValue = useContext(SatelliteContext);
+  if (!contextValue) throw new Error('No Provider for SatelliteContext found!');
+  return contextValue;
+}
