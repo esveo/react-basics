@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Satellites } from './Satellites';
+import { useGlobalSatellites } from './Satellites';
 import './SatelliteSelect.css';
 
-export const SatelliteSelect = memo(function SatelliteSelect({
+export const SatelliteSelect = React.memo(function SatelliteSelect({
   selectedSatelliteId
 }) {
-  const { satellites } = Satellites.useContainer();
-  let sum = useMemo(() => calculateNumber(), []);
+  const { satellites } = useGlobalSatellites();
+  const largeNumber = useMemo(() => calculateLargeNumber(), []);
   return (
     <ul className="satellite-link-select-list">
-      {sum}
+      {largeNumber}
       {satellites.map(s => (
         <li
           key={s.id}
@@ -28,14 +28,14 @@ export const SatelliteSelect = memo(function SatelliteSelect({
   );
 });
 
-SatelliteSelect.propTypes = {
-  selectedSatelliteId: PropTypes.string
-};
-
-function calculateNumber() {
+function calculateLargeNumber() {
   let sum = 0;
   for (let i = 0; i < 1e9; i++) {
     sum += i;
   }
   return sum;
 }
+
+SatelliteSelect.propTypes = {
+  selectedSatelliteId: PropTypes.string
+};

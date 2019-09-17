@@ -24,16 +24,17 @@ export const performanceExerciseSlides = [
       </ListItem>
       <ListItem>
         Check the performance profiler of your browser and look for bottlenecks
-        when switching between satellites and when selected the already selected
-        satellite.
+        when switching between satellites and when selecting the already
+        selected satellite.
       </ListItem>
       <ListItem>
         Check the React performance profiler of your browser and look for
-        bottlenecks when switching between satellites and when selected the
+        bottlenecks when switching between satellites and when selecting the
         already selected satellite.
       </ListItem>
       <ListItem>
-        Memoize the value of the <Code>Satellites</Code> container.
+        Memoize the result of the <Code>GlobalSatelliteProvider</Code> with
+        useMemo
       </ListItem>
       <ListItem>
         Apply React.memo to <Code>SatelliteSelect</Code>.

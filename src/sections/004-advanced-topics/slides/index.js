@@ -5,6 +5,7 @@ import { classesSlides } from './04-classes';
 import { stylingInReactSlides } from './05-stylingInReact';
 import { performanceSlides } from './06-performance';
 import { testingSlides } from './07-testing';
+import { finishSlides } from './08-finish';
 
 export const advancedTopicsSlides = [
   ...routingSlides,
@@ -13,5 +14,6 @@ export const advancedTopicsSlides = [
   ...classesSlides,
   ...stylingInReactSlides,
   ...performanceSlides,
-  ...testingSlides
+  ...testingSlides,
+  ...finishSlides
 ];

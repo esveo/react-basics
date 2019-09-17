@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from './Button';
 import './SatelliteForm.css';
-import { Satellites } from './Satellites';
+import { useGlobalSatellites } from './Satellites';
 
 const defaultFormState = {
   name: '',
@@ -12,7 +12,7 @@ const defaultFormState = {
 };
 
 export function SatelliteForm(props) {
-  const { save, remove } = Satellites.useContainer();
+  const { save, remove } = useGlobalSatellites();
   const [formState, setFormState] = useState(
     props.satellite || defaultFormState
   );
