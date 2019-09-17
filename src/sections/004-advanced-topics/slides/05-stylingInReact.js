@@ -1,15 +1,15 @@
 import raw from 'raw.macro';
 import React from 'react';
 import { Slide } from 'spectacle';
+import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
+import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
-import { dash } from '../../../__helpers/dash';
-import { ALink } from '../../../__helpers/slides/Link';
 
 export const stylingInReactSlides = [
   getTOCSlide(),
@@ -32,7 +32,7 @@ export const stylingInReactSlides = [
         </List>
       </Column>
       <Column>
-        <CodeBlock lang="css" source={raw('../examples/styling--css.css')} />
+        <CodeBlock source={raw('../examples/styling--css.css')} />
         <CodeBlock source={raw('../examples/styling--js.js')} />
       </Column>
     </Columns>
