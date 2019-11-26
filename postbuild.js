@@ -54,5 +54,28 @@ async function exportPDF() {
   });
   b.close();
 }
+async function exportPreparationSlides() {
+  const b = await puppeteer.launch({
+    defaultViewport: { width: 1920, height: 1080 }
+  });
+  const p = await b.newPage();
+  await p.goto(path.join(__dirname, 'build/index.html'), {
+    waitUntil: 'networkidle2'
+  });
+  await p.click('[data-test-id="preparation-slides-link"]');
+  await p.evaluate(() => {
+    window.location.href = window.location.href + '?export';
+  });
+  await p.emulateMedia('screen');
+  await new Promise(r => setTimeout(r, 2000));
+  await p.pdf({
+    path: path.join(__dirname, 'build/preparation.pdf'),
+    printBackground: true,
+    landscape: true,
+    height: '1920px',
+    width: '1080px'
+  });
+  b.close();
+}
 
-exportPDF();
+exportPDF().then(exportPreparationSlides);

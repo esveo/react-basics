@@ -21,6 +21,9 @@ export function Home() {
             Slides
           </Link>
           <Link to="/exercises">Exercises</Link>
+          <Link data-test-id="preparation-slides-link" to="/preparation">
+            Preparation
+          </Link>
         </Links>
       </Foreground>
     </Wrapper>

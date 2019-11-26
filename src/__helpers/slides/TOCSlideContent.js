@@ -45,7 +45,7 @@ import { Column, Columns } from './Column';
 import { LinkToSlides } from './LinkToSlide';
 import { List, ListItem } from './List';
 
-export function TOCSlideContent({ slide }) {
+export function TOCSlideContent({ slide, noLinks }) {
   const chapters = [
     {
       name: 'Introduction',
@@ -174,6 +174,7 @@ export function TOCSlideContent({ slide }) {
   const tocSlideIndex = slidesIndex([slide()]);
 
   function column(from, to) {
+    const LinkComponent = noLinks ? 'span' : TOCLink;
     return (
       <Column>
         <List>
@@ -184,14 +185,14 @@ export function TOCSlideContent({ slide }) {
                 <List>
                   {chapter.childChapters.map(chapter => (
                     <ListItem key={chapter.name}>
-                      <TOCLink
+                      <LinkComponent
                         slides={chapter.slides}
                         data-current={
                           slidesIndex(chapter.slides) === tocSlideIndex
                         }
                       >
                         {chapter.name}
-                      </TOCLink>
+                      </LinkComponent>
                     </ListItem>
                   ))}
                 </List>

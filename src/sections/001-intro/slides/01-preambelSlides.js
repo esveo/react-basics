@@ -2,15 +2,20 @@ import React from 'react';
 import { Slide } from 'spectacle';
 import { dash } from '../../../__helpers/dash';
 import { AngularLogo } from '../../../__helpers/slides/AngularLogo';
+import { Code } from '../../../__helpers/slides/Code';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
+import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { ReactLogo } from '../../../__helpers/slides/ReactLogo';
 import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { VueLogo } from '../../../__helpers/slides/VueLogo';
 import { initialSetupExerciseSlides } from '../exercises/01-initialSetup/slides';
+import { ReactComponent as CSSSvg } from './css3.svg';
+import { ReactComponent as HTMLSvg } from './html5.svg';
+import { ReactComponent as JSSvg } from './js.svg';
 import { ReactComponent as ModulesSVG } from './modules.svg';
 
 export const preambelSlides = [
@@ -18,11 +23,7 @@ export const preambelSlides = [
     <Header text="About us" />
     <Columns>
       <Column>
-        <ColumnHead>
-          Digital
-          <br />
-          Solutions
-        </ColumnHead>
+        <ColumnHead>Digital Solutions</ColumnHead>
         <List>
           <ListItem>Planning, controlling, reporting</ListItem>
           <ListItem>Information management</ListItem>
@@ -30,26 +31,12 @@ export const preambelSlides = [
         </List>
       </Column>
       <Column>
-        <ColumnHead>
-          Information
-          <br />
-          Security
-        </ColumnHead>
+        <ColumnHead>Software Technology</ColumnHead>
         <List>
-          <ListItem>Consulting</ListItem>
-          <ListItem>Trainings</ListItem>
-        </List>
-      </Column>
-      <Column>
-        <ColumnHead>
-          Software
-          <br />
-          Technology
-        </ColumnHead>
-        <List>
-          <ListItem>Project Onboarding</ListItem>
-          <ListItem>Architecture Consulting</ListItem>
+          <ListItem>Technology Workshops</ListItem>
           <ListItem>Software Development Trainings</ListItem>
+          <ListItem>Architecture Consulting</ListItem>
+          <ListItem>Project Kick-Offs</ListItem>
         </List>
       </Column>
     </Columns>
@@ -68,13 +55,79 @@ export const preambelSlides = [
 
   <Slide>
     <Header text="What do we want to achieve?" />
-    <Text>
+    <Text size={1.3}>
       You should be able to <b>build your own React projects</b> from scratch.
     </Text>
-    <Text>
+    <Text size={1.3}>
       You should have a starting point for{' '}
       <b>selecting technologies/libraries</b> for your next frontend project.
     </Text>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="What should you already know?" />
+    <Columns>
+      <Column weight={1}>
+        <ColumnHead>
+          <HTMLSvg style={{ height: 110, flexShrink: 0 }} />
+        </ColumnHead>
+        <List>
+          <ListItem>General structure of a HTML document</ListItem>
+          <ListItem>Integration of styles and scripts</ListItem>
+          <ListItem>
+            Basic tags like <Code>div</Code>, <Code>span</Code>, <Code>a</Code>,{' '}
+            <Code>p</Code> etc.{' '}
+          </ListItem>
+          <ListItem>
+            <ALink
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
+            >
+              Help
+            </ALink>
+          </ListItem>
+        </List>
+      </Column>
+      <Column weight={1}>
+        <ColumnHead>
+          <CSSSvg style={{ height: 110, flexShrink: 0 }} />
+        </ColumnHead>
+        <List>
+          <ListItem>Selectors</ListItem>
+          <ListItem>Properties</ListItem>
+          <ListItem>
+            <ALink
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics"
+            >
+              Help
+            </ALink>
+          </ListItem>
+        </List>
+      </Column>
+      <Column weight={1}>
+        <ColumnHead>
+          <JSSvg style={{ height: 110, flexShrink: 0 }} />
+        </ColumnHead>
+        <List>
+          <ListItem>Variables</ListItem>
+          <ListItem>Data types</ListItem>
+          <ListItem>
+            Control structures (like <Code>if</Code>)
+          </ListItem>
+          <ListItem>Functions</ListItem>
+          <ListItem>
+            <ALink
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+            >
+              Help
+            </ALink>
+          </ListItem>
+        </List>
+      </Column>
+    </Columns>
     <Footer />
   </Slide>,
 
@@ -244,6 +297,40 @@ export const preambelSlides = [
         </List>
       </Column>
     </Columns>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="What do you need to participate?" />
+    <List>
+      <ListItem>
+        Modern Browser: <b>Chrome</b> or <b>Firefox</b>
+      </ListItem>
+      <ListItem>
+        <b>Node.js</b> {dash} validate with <Code>node -v</Code> (
+        <ALink href="https://nodejs.org/en/" target="_blank">
+          Download
+        </ALink>
+        )
+      </ListItem>
+      <ListItem>
+        <b>npm</b> {dash} validate with <Code>npm -v</Code> (included with
+        Node.js)
+      </ListItem>
+      <ListItem>
+        Editor/IDE: <b>Visual Studio Code</b> (recommended), WebStorm, Atom,
+        etc. (
+        <ALink href="https://code.visualstudio.com/download" target="_blank">
+          Download
+        </ALink>
+        )
+      </ListItem>
+      <ListItem>
+        Ability/Permissions for global npm modules {dash} validate with{' '}
+        <Code>npm i -g create-react-app</Code>
+      </ListItem>
+      <ListItem>Optional: Version Control like git, svn, mercurial</ListItem>
+    </List>
     <Footer />
   </Slide>,
 

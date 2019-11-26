@@ -3,6 +3,7 @@ import { MemoryRouter as Router, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import { Exercises } from './Exercises';
 import { Home } from './Home';
+import { PreparationSlides } from './PreparationSlides';
 import { Slides } from './Slides';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <StoreLastPath />
           <Route path="/" exact render={() => <Home />} />
           <Route path="/slides" render={() => <Slides />} />
+          <Route path="/preparation" render={() => <PreparationSlides />} />
           <Route path="/exercises" render={() => <Exercises />} />
         </>
       </Router>

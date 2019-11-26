@@ -3,18 +3,18 @@ import { Slide } from 'spectacle';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-export const getTOCSlide = () => {
+export const getTOCSlide = ({ noLinks } = {}) => {
   const slide = (
     <Slide>
       <Header text="Agenda" />
-      <TOCContentLoader slide={() => slide} />
+      <TOCContentLoader slide={() => slide} noLinks={noLinks} />
       <Footer />
     </Slide>
   );
   return slide;
 };
 
-function TOCContentLoader({ slide }) {
+function TOCContentLoader({ slide, noLinks }) {
   const [Component, setComponent] = useState(null);
 
   useEffect(() => {
@@ -24,5 +24,5 @@ function TOCContentLoader({ slide }) {
   }, []);
 
   if (!Component) return null;
-  return <Component slide={slide} />;
+  return <Component slide={slide} noLinks={noLinks} />;
 }
