@@ -27,7 +27,7 @@ export const satelliteFormSlides = [
     <Columns align="center">
       <Column>
         <List>
-          <ListItem>State is does not need to be passed to control</ListItem>
+          <ListItem>State does not need to be passed to control</ListItem>
           <ListItem>Parent component is only informed about changes</ListItem>
           <ListItem>No way to change or reset the internalValue</ListItem>
           <ListItem>

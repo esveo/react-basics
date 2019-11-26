@@ -47,8 +47,17 @@ export const preambelSlides = [
     <Header text="Who are you?" />
     <List>
       <ListItem>What's your name?</ListItem>
-      <ListItem>What are your experiences?</ListItem>
-      <ListItem>Why are you here?</ListItem>
+      <ListItem>
+        What are your experiences regarding
+        <List>
+          <ListItem>Software development</ListItem>
+          <ListItem>Web development</ListItem>
+          <ListItem>React</ListItem>
+        </List>
+      </ListItem>
+      <ListItem>
+        What expectations do you have regarding this training?
+      </ListItem>
     </List>
     <Footer />
   </Slide>,

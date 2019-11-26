@@ -69,7 +69,8 @@ export const dataFlowExerciseSlides = [
       </ListItem>
       <ListItem>
         Declare a function <Code>incrementAndRender</Code> in the{' '}
-        <Code>index.js</Code> that increments the <Code>counter</Code> variable.
+        <Code>index.js</Code> that increments the <Code>counter</Code> variable
+        (<Code>counter = counter + 1</Code>).
       </ListItem>
       <ListItem>
         After incrementing, this function should call{' '}

@@ -74,7 +74,7 @@ export const satelliteSelectSlides = [
     console.log(n);
   }
   return (
-    <h1 key={n} onClick={() => console.log(n)}>
+    <h1 key={n} onClick={log}>
       Number: {n}
     </h1>
   )

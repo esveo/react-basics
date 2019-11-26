@@ -1,6 +1,6 @@
 // input
 const app = (
-  <div>
+  <div className="my-div">
     <header>Hello</header>
     <main>Hello</main>
     <footer>Hello</footer>

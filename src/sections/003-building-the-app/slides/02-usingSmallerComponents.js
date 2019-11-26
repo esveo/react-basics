@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import raw from 'raw.macro';
 import React from 'react';
 import { Slide } from 'spectacle';
+import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
@@ -157,6 +158,30 @@ export const usingSmallerComponentsSlides = [
         <CodeBlock source={raw('../examples/propsWithPropTypes.js')} />
       </Column>
     </Columns>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text={`Node Package Manager ${dash} npm`} />
+    <List>
+      <ListItem>
+        <b>Largest collection of open source packages in the world</b>
+      </ListItem>
+      <ListItem>
+        More than 1 million packages; ~15 billion downloads per week
+      </ListItem>
+      <ListItem>
+        Similar to <Code>maven</Code>, <Code>nuget</Code> or{' '}
+        <Code>composer</Code>
+      </ListItem>
+      <ListItem>
+        All installed packages are saved in the <Code>node_modules</Code>{' '}
+        directory and referenced in the <Code>package.json</Code>
+      </ListItem>
+      <ListItem>
+        <Code>npm i --save react</Code>
+      </ListItem>
+    </List>
     <Footer />
   </Slide>,
 

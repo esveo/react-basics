@@ -14,14 +14,15 @@ export const externalPackagesSlides = [
     <List>
       <ListItem>"The package manager for JavaScript"</ListItem>
       <ListItem>
-        Largest package registry in the world with more than 350.000 packages
+        Largest package registry in the world with more than 1.000.000 packages
       </ListItem>
       <ListItem>
         Contains libraries or frameworks for frontend and backend JavaScript
         development
       </ListItem>
       <ListItem>
-        You already used this, when using <Code>create-react-app</Code>
+        You already used this, when using <Code>create-react-app</Code> and{' '}
+        <Code>prop-types</Code>
       </ListItem>
       <ListItem>
         <b>Be careful when installing packages!</b>

@@ -20,8 +20,8 @@ export const meetingReactExerciseSlides = [
         <Code>ReactDOM</Code> from <Code>'react-dom'</Code>
       </ListItem>
       <ListItem>
-        Retrieve the DOM element with the id "root" from the document. (hint:
-        use <Code>getElementById</Code>)
+        Retrieve the DOM element with the id "root" from the document and save
+        it in a variable (hint: use <Code>document.getElementById</Code>)
       </ListItem>
       <ListItem>
         Build the description of the following app with{' '}

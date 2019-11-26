@@ -1,5 +1,5 @@
 async function operateOnWikipedia() {
-  const response = await fetch('de.wikipedia.org//wiki/Spezial', {
+  const response = await fetch('de.wikipedia.org/wiki/Spezial', {
     method: 'GET'
   });
   if (!response.ok) throw new Error('Request Error');
@@ -9,7 +9,7 @@ async function operateOnWikipedia() {
   console.log(data);
 
   // Send response data back to server
-  await fetch('de.wikipedia.org//wiki/Spezial', {
+  await fetch('de.wikipedia.org/wiki/Spezial', {
     method: 'POST',
     body: JSON.stringify({ data: data })
   });

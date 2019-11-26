@@ -1,7 +1,7 @@
-const renderGreeting = (name, isExited) => (
+const renderGreeting = (name, isExcited) => (
   <h1>
     Hello {name}
-    {isExited ? '!!!!!!!' : null}
+    {isExcited ? '!!!!!!!' : null}
   </h1>
 );
 

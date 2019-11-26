@@ -16,9 +16,9 @@ export const init = container => {
       React.createElement(
         'nav',
         null,
-        ['https://google.de', 'https://yahoo.de', 'https://bing.de'].map(url =>
-          React.createElement('a', { key: url, href: url }, url)
-        )
+        React.createElement('a', { href: 'https://google.de' }, 'Google'),
+        React.createElement('a', { href: 'https://yahoo.de' }, 'Yahoo'),
+        React.createElement('a', { href: 'https://bing.de' }, 'Bing')
       )
     ),
     React.createElement('main'),

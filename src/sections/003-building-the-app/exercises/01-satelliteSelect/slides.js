@@ -57,10 +57,14 @@ export const satelliteSelectExerciseSlides = [
     <Header text={`Building the select ${dash} part 2`} tag="Exercise" />
     <List>
       <ListItem>
+        Define a new state variable and updater <Code>selectedSatellite</Code>{' '}
+        and <Code>setSelectedSatellite</Code>
+      </ListItem>
+      <ListItem>
         Define a new function <Code>onSatelliteClick(satellite)</Code> in the{' '}
-        <Code>App</Code> component, that sets a new state variable{' '}
-        <Code>selectedSatellite</Code>. Call this function in the anonymous
-        onClick handler on each <Code>li</Code> tag with the satellite of this{' '}
+        <Code>App</Code> component, that calls <Code>setSelectedSatellite</Code>{' '}
+        with the given satellite. Call this function in the anonymous onClick
+        handler on each <Code>li</Code> tag with the satellite of this{' '}
         <Code>li</Code>.
       </ListItem>
 

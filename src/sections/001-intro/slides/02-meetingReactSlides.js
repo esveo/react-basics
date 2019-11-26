@@ -186,45 +186,6 @@ export const meetingReactSlides = [
   </Slide>,
 
   <Slide>
-    <Header text={`map, filter & sort`} tag="JS recap" />
-    <Text left>
-      Remember: Your React app is a large data transformation. Data is often
-      represented in arrays so you need to be able to use methods on arrays to
-      retrieve your desired data.
-    </Text>
-    <List>
-      <ListItem>
-        <b>
-          <Code>map</Code>:
-        </b>{' '}
-        Transform each item in a list into another item.
-      </ListItem>
-      <ListItem>
-        <b>
-          <Code>filter</Code>:
-        </b>{' '}
-        Only keep items in the list that match a specific condition.
-      </ListItem>
-      <ListItem>
-        <b>
-          <Code>sort</Code>:
-        </b>{' '}
-        Sort items by providing a function that compares two elements.
-      </ListItem>
-    </List>
-    <Footer />
-  </Slide>,
-
-  <Slide>
-    <Header text={`map, filter & sort`} tag="JS recap" />
-    <CodeBlock
-      lang="jsx"
-      source={raw('../examples/meetingReactArrayFunctions.js')}
-    />
-    <Footer />
-  </Slide>,
-
-  <Slide>
     <Header text={`Meeting React ${dash} UI as a tree`} />
     <UITreeSVG />
     <Footer />

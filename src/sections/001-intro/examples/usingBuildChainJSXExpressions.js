@@ -8,8 +8,8 @@ app = <div>Hello {name}</div>;
 
 // Conditional rendering with ternary.
 let showModal = true;
-app = <div>{showModal ? <div>Model</div> : <div>No Modal</div>}</div>;
+app = <div>{showModal ? <div>Modal</div> : <div>No Modal</div>}</div>;
 
 // Conditional rendering with logical expressions
 showModal = false;
-app = <div>{showModal && <div>Model</div>}</div>;
+app = <div>{showModal && <div>Modal</div>}</div>;

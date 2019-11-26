@@ -10,6 +10,18 @@ const defaultFormState = {
   type: 'communication'
 };
 
+const propTypes = {
+  onSave: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  satellite: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    reverse: PropTypes.bool.isRequired,
+    angle: PropTypes.number.isRequired,
+    type: PropTypes.oneOf(['communication', 'military', 'science']).isRequired
+  })
+};
+
 export function SatelliteForm(props) {
   const [formState, setFormState] = useState(
     props.satellite || defaultFormState
@@ -97,14 +109,4 @@ export function SatelliteForm(props) {
   );
 }
 
-SatelliteForm.propTypes = {
-  onSave: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
-  satellite: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    reverse: PropTypes.bool.isRequired,
-    angle: PropTypes.number.isRequired,
-    type: PropTypes.oneOf(['communication', 'military', 'science']).isRequired
-  })
-};
+SatelliteForm.propTypes = propTypes;

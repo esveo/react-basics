@@ -4,7 +4,7 @@ import { dash } from '../../../../__helpers/dash';
 import { Code } from '../../../../__helpers/slides/Code';
 import { Footer } from '../../../../__helpers/slides/Footer';
 import { Header } from '../../../../__helpers/slides/Header';
-import { Link } from '../../../../__helpers/slides/Link';
+import { ALink, Link } from '../../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../../__helpers/slides/List';
 import { pathToSolution } from '../../../../__helpers/solutions/pathToSolution';
 import { key } from './key';
@@ -82,7 +82,14 @@ export const satelliteFormExerciseSlides = [
             </Code>
           </ListItem>
           <ListItem>
-            type: <Code>{'&lt;select value={...} &gt;'}</Code>
+            type: <Code>{'&lt;select value={...} &gt;'}</Code> (Check the{' '}
+            <ALink
+              target="_blank"
+              href="https://reactjs.org/docs/forms.html#the-select-tag"
+            >
+              React docs
+            </ALink>{' '}
+            on how to use the select tag.)
           </ListItem>
         </List>
       </ListItem>
