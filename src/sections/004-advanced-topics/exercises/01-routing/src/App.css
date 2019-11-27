@@ -18,7 +18,7 @@
   flex: 1 1 0;
 }
 
-.satellite-control-app .satellite-link-select {
+.satellite-control-app .satellite-select {
   display: flex;
   flex-direction: column;
   overflow: hidden;

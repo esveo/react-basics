@@ -31,26 +31,23 @@ export const routingExerciseSlides = [
         Remove the <Code>onClick</Code> function from the <Code>li</Code>-tag in{' '}
         <Code>SatelliteSelect</Code> and render a <Code>Link</Code> inside of
         the <Code>li</Code> and provide the <Code>to</Code> prop as{' '}
-        <Code>{'{`/${satellite.id}`}'}</Code>
+        <Code>{'{"/" + satellite.id}'}</Code>
       </ListItem>
       <ListItem>
-        Replace the <Code>{'<App />'}</Code> tag in <Code>index.js</Code> with{' '}
-        <Code>
-          {
-            '<Route path="/:satelliteId" children={(routerProps) => <App {...routerProps} />} />'
-          }
-        </Code>
-      </ListItem>
-      <ListItem>
-        Pull the selectedSatelliteId from <Code>match.params.satelliteId</Code>{' '}
-        in the <Code>App</Code> component.
+        In the <Code>{'<App />'}</Code> component, use{' '}
+        <Code>useRouteMatch('/:satelliteId')</Code> to extract the currently
+        selected satellite from params.
         <br />
-        <b>Note</b>: match will be <Code>null</Code> when route is not matching.
+        <b>Note:</b> Match can be <Code>null</Code> when no satellite is
+        selected.
+      </ListItem>
+      <ListItem>
+        Get the history object from <Code>useHistory</Code>
       </ListItem>
       <ListItem>
         Change the <Code>onClick</Code> callback in the create button to
         <br />
-        <Code>() => props.history.push('/')</Code>
+        <Code>() => history.push('/')</Code>
       </ListItem>
 
       <ListItem>

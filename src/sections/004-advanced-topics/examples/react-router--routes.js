@@ -1,18 +1,19 @@
-import { Route } from 'react-router-dom';
-
+import { Route, Switch } from 'react-router-dom';
 export function MainAppComponent() {
   return (
     <div>
       <MainNavigation />
-      <div className="body">
-        <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/projects" render={() => <Projects />} />
-        <Route
-          exact
-          path="/projects/:id"
-          render={routeProps => <Project id={routeProps.match.params.id} />}
-        />
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/projects">
+          <Projects />
+        </Route>
+        <Route exact path="/projects/:projectId">
+          <Project />
+        </Route>
+      </Switch>
     </div>
   );
 }

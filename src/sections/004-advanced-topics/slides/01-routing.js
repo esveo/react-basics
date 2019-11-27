@@ -1,13 +1,11 @@
 import raw from 'raw.macro';
 import React from 'react';
 import { Slide } from 'spectacle';
-import { dash } from '../../../__helpers/dash';
 import { Code } from '../../../__helpers/slides/Code';
 import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
-import { Heading } from '../../../__helpers/slides/Heading';
 import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
 import { Text } from '../../../__helpers/slides/Text';
@@ -124,97 +122,46 @@ export const routingSlides = [
   <Slide>
     <Header text="Introduction to react-router" />
     <Text>
-      <b>Step 2:</b> Define your routes.
-    </Text>
-    <CodeBlock source={raw('../examples/react-router--routes.js')} />
-    <Footer />
-  </Slide>,
-
-  <Slide>
-    <Header text="Introduction to react-router" />
-    <Text>
-      <b>Step 3:</b> Add links.
+      <b>Step 2:</b> Add links.
     </Text>
     <CodeBlock source={raw('../examples/react-router--links.js')} />
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="Route" tag="API" />
-    <CodeBlock
-      lang="jsx"
-      source={
-        '<Route exact={boolean} path={string} render={(routerProps) => ReactNode} />'
-      }
-    />
-    <Heading size={6} textAlign="left">
-      Can be placed anywhere in your application and will render its content
-      when the given path matches.
-    </Heading>
+    <Header text="Introduction to react-router" />
+    <Text>
+      <b>Step 3a:</b> Extract state or methods from router with custom hooks
+    </Text>
+    <CodeBlock source={raw('../examples/react-router--hooks.js')} />
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Introduction to react-router" />
+    <Text>
+      <b>Step 3b:</b> Use <Code>Switch</Code> and <Code>Route</Code> to render
+      the first matching component.
+    </Text>
+    <CodeBlock source={raw('../examples/react-router--routes.js')} />
+    <Footer />
+  </Slide>,
+
+  ...routingExerciseSlides,
+
+  <Slide>
+    <Header text="Best practices" />
     <List>
       <ListItem>
-        <Code>exact</Code>: When false, routes that start with this string will
-        also trigger this route. (e.g. <Code>/projects/1</Code> would trigger
-        the path
-        <Code>/projects</Code>)
+        Only very few components should have knowledge about the routing of the
+        app.
       </ListItem>
+      <ListItem>Extract necessary data once and pass around as props.</ListItem>
       <ListItem>
-        <Code>path</Code>: Path that will be used to match
-      </ListItem>
-      <ListItem>
-        <Code>render</Code>: <b>RenderProp</b> {dash} will be called when the
-        route matches.
-      </ListItem>
-      <ListItem>
-        More info and detailed API can be found{' '}
-        <ALink
-          href="https://reacttraining.com/react-router/web/api/Route"
-          target="_new"
-        >
-          here
-        </ALink>
+        Don't put routing information into React state, because{' '}
+        <b>duplicated state needs to be synced</b> which is very error prone.
       </ListItem>
     </List>
     <Footer />
-  </Slide>,
-
-  <Slide>
-    <Header text="RenderProp" />
-    <Text>
-      Special prop: <b>Function</b> that will be called by the target component
-      (with or without arguments) that <b>returns a ReactNode</b>
-      <br />
-      Usefull when you want to pass data from your component to the children of
-      your component.
-    </Text>
-    <Footer />
-  </Slide>,
-  <Slide>
-    <Header text="RenderProp" />
-    <CodeBlock source={raw('../examples/render-prop.js')} />
-    <Footer />
-  </Slide>,
-
-  <Slide>
-    <Header text={`React Router ${dash} render vs children`} />
-    <Text>
-      The <Code>render</Code> function will only be called, when the route
-      matches.
-    </Text>
-    <Text>
-      Sometimes you need to always render and retrieve information about wether
-      the route matches or not.
-    </Text>
-    <Text>
-      For this, the <Code>children</Code> prop can be used.
-    </Text>
-    <Footer />
-  </Slide>,
-  <Slide>
-    <Header text="Children Prop" />
-    <CodeBlock source={raw('../examples/children-prop.js')} />
-    <Footer />
-  </Slide>,
-
-  ...routingExerciseSlides
+  </Slide>
 ];

@@ -62,7 +62,7 @@ export const sideEffectsSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="useEffect" tag="API" />
+    <Header text={`The next hook ${dash} useEffect`} tag="API" />
     <CodeBlock
       lang="jsx"
       source={'useEffect(effectFunction, [dependencies])'}
@@ -171,7 +171,7 @@ export const sideEffectsSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="useCallback" tag="API" />
+    <Header text={`The next hook ${dash} useCallback`} tag="API" />
     <CodeBlock
       lang="jsx"
       source={'useCallback(callbackFunction, [dependencies])'}

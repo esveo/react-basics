@@ -1,5 +1,6 @@
 import SatelliteVisualisation from '@esveo/satellite-visualisation';
 import React, { useEffect, useState } from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import './App.css';
 import { Button } from './Button';
 import {
@@ -13,7 +14,9 @@ import { SatelliteSelect } from './SatelliteSelect';
 
 export function App(props) {
   const [satellites, setSatellites] = useState([]);
-  const selectedSatelliteId = props.match && props.match.params.satelliteId;
+  const match = useRouteMatch('/:satelliteId');
+  const selectedSatelliteId = match && match.params.satelliteId;
+  const history = useHistory();
 
   useEffect(() => {
     getSatellites().then(satellites => setSatellites(satellites));
@@ -47,7 +50,7 @@ export function App(props) {
           selectedSatelliteId={selectedSatelliteId}
           satellites={satellites}
         />
-        <Button onClick={() => props.history.push('/')}>Create new</Button>
+        <Button onClick={() => history.push('/')}>Create new</Button>
       </div>
       <div className="satellite-details">
         <SatelliteForm

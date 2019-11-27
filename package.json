@@ -4,8 +4,8 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@emotion/core": "^10.0.7",
-    "@emotion/styled": "^10.0.7",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
     "@esveo/satellite-visualisation": "^1.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.14",
     "@fortawesome/free-regular-svg-icons": "^5.7.1",
@@ -16,11 +16,11 @@
     "prism-theme-night-owl": "^1.0.1",
     "prop-types": "^15.7.2",
     "raw.macro": "^0.2.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "3.1.1",
-    "spectacle": "^5.4.0",
+    "react": "16.8",
+    "react-dom": "16.8",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "spectacle": "5",
     "unstated-next": "^1.0.1"
   },
   "scripts": {

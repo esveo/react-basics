@@ -15,7 +15,7 @@ export function SatelliteSelect({ selectedSatelliteId, satellites }) {
               : ''
           }
         >
-          <Link to={`/${s.id}`}>{s.name}</Link>
+          <Link to={'/' + s.id}>{s.name}</Link>
         </li>
       ))}
     </ul>

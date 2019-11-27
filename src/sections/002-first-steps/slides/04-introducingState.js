@@ -91,6 +91,32 @@ export const introducingStateSlides = [
     <Footer />
   </Slide>,
 
+  <Slide>
+    <Header text="React Hooks" tag="API" />
+    <Text>
+      <Code>useState</Code> is the first "React Hook" that we will be using.
+    </Text>
+    <List>
+      <ListItem>
+        They <b>hook into the React core</b> to provide additional features to
+        Function Components (like state).
+      </ListItem>
+      <ListItem>
+        The <b>count</b> and the <b>order</b> of these hooks{' '}
+        <b>must never change</b> during the lifecycle of a Component
+        <List>
+          <ListItem>No conditional calls of hooks</ListItem>
+          <ListItem>No hook calls in loops</ListItem>
+        </List>
+      </ListItem>
+      <ListItem>
+        If you have a loop, render one Component per iteration.
+      </ListItem>
+    </List>
+
+    <Footer />
+  </Slide>,
+
   ...introducingStateExerciseSlides,
 
   <Slide>
