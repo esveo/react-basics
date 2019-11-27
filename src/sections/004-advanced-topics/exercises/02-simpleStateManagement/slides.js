@@ -24,6 +24,9 @@ export const simpleStateManagementExerciseSlides = [
         from this hook.
       </ListItem>
       <ListItem>
+        Leave the logic for the selectedSatellite in <Code>App.js</Code>
+      </ListItem>
+      <ListItem>
         Create a React Context <Code>SatelliteContext</Code> and the
         corresponding Provider in <Code>Satellites.js</Code>
       </ListItem>
@@ -49,8 +52,8 @@ export const simpleStateManagementExerciseSlides = [
     <Header text="Handle satellites in a separated container" tag="Exercise" />
     <List>
       <ListItem>
-        Add the <Code>GlobalSatelliteProvider</Code> around the{' '}
-        <Code>Route</Code> in your <Code>index.js</Code>
+        Add the <Code>GlobalSatelliteProvider</Code> around the <Code>App</Code>{' '}
+        in your <Code>index.js</Code>
       </ListItem>
       <ListItem>
         Remove the <Code>satellites</Code> prop from{' '}
