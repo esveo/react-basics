@@ -1,5 +1,7 @@
+const initialTodoState = { todos: [], filter: '' };
+
 function App() {
-  const [state, dispatch] = useReducer(todoReducer, { todos: [], filter: '' });
+  const [state, dispatch] = useReducer(todoReducer, initialTodoState);
 
   function addTodo(text) {
     dispatch({

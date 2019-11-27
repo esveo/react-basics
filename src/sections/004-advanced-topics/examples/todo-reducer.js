@@ -4,7 +4,7 @@
  *    { id: 1, text: 'Clean house', done: false },
  *    { id: 2, text: 'Make todo list', done: true }
  *   ],
- *   filter: ''
+ *   filter: null
  * }
  */
 function todoReducer(state, action) {

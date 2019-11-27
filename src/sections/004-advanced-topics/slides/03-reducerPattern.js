@@ -8,6 +8,7 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { reducerPatternExerciseSlides } from '../exercises/03-reducerPattern/slides';
 
@@ -26,7 +27,25 @@ export const reducerPatternSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Explicitly modelling a todo application via actions" />
+    <Header text="Previously: useState" />
+    <Text left>Problems:</Text>
+    <List>
+      <ListItem>
+        <b>Logic</b> of updates is <b>defined on the call-site</b> of setState.
+      </ListItem>
+      <ListItem>
+        This <b>logic</b> is defined <b>inside of the React Component</b> and
+        can not be tested in isolation.
+      </ListItem>
+      <ListItem>
+        Logic makes the rendering part of the <b>Component harder to read</b>.
+      </ListItem>
+    </List>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Step 1: Think about types of action" />
     <List>
       <ListItem>
         <Code>SET_TODOS</Code>: Save all todos after loading from server
@@ -51,7 +70,32 @@ export const reducerPatternSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Reducers: Handling the actions" />
+    <Header text="Step 2: Think about shapes that describe each action" />
+    <List>
+      <ListItem>
+        <Code>{'{ type: "SET_TODOS", todos: [] }'}</Code>
+      </ListItem>
+      <ListItem>
+        <Code>{'{ type: "ADD_TODO", text: "some todo" }'}</Code>
+      </ListItem>
+      <ListItem>
+        <Code>{'{ type: "TOGGLE_TODO", id: "1" }'}</Code>
+      </ListItem>
+      <ListItem>
+        <Code>{'{ type: "REMOVE_TODO", id: "1" }'}</Code>
+      </ListItem>
+      <ListItem>
+        <Code>{'{ type: "UPDATE_TODO", id: "1", text: "changed text" }'}</Code>
+      </ListItem>
+      <ListItem>
+        <Code>{'{ type: "SET_FILTER", value: "ONLY_ACTIVE" }'}</Code>
+      </ListItem>
+    </List>
+    <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Step 3: Handling actions in reducers" />
     <CodeBlock source={raw('../examples/todo-reducer.js')} />
     <Footer />
   </Slide>,
