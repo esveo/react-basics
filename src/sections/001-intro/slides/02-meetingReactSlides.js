@@ -187,7 +187,7 @@ export const meetingReactSlides = [
 
   <Slide>
     <Header text={`Meeting React ${dash} UI as a tree`} />
-    <UITreeSVG />
+    <UITreeSVG style={{ height: '20em' }} />
     <Footer />
   </Slide>,
   <Slide>
