@@ -2,13 +2,13 @@ import { satelliteReducer } from './Satellites';
 
 describe('Satellites', () => {
   describe('satelliteReducer', () => {
-    it('should throw on unknown action type.', () => {
+    it('should return state on unknown action', () => {
       // arrange
       const initialState = [];
       const action = { type: 'NOT_A_KNOWN_ACTION_TYPE' };
 
       // act + assert
-      expect(() => satelliteReducer(initialState, action)).toThrowError();
+      expect(satelliteReducer(initialState, action)).toBe(initialState);
     });
 
     it('should set the loaded satellites without mutating the state', () => {
