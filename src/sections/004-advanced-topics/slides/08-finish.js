@@ -41,5 +41,27 @@ export const finishSlides = [
       </ListItem>
     </List>
     <Footer />
+  </Slide>,
+
+  <Slide>
+    <Header text="Where to go from here?" />
+    <List>
+      <ListItem>
+        <b>Start building an app</b>
+      </ListItem>
+      <ListItem>Switch to TypeScript</ListItem>
+      <ListItem>
+        Learn advanced patterns
+        <List>
+          <ListItem>Compound Components</ListItem>
+          <ListItem>Render Props</ListItem>
+          <ListItem>Higher Order Components</ListItem>
+        </List>
+      </ListItem>
+      <ListItem>Take a look at GraphQL</ListItem>
+      <ListItem>Learn SVG to visualise data with React</ListItem>
+      <ListItem>Use React-Native to build mobile apps</ListItem>
+    </List>
+    <Footer />
   </Slide>
 ];
