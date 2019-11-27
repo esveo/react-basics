@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer
-} from 'react';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import {
   createSatellite,
   deleteSatellite,
@@ -45,26 +39,22 @@ function useSatellites() {
     );
   }, []);
 
-  const satelliteUtils = useMemo(() => {
-    async function save(satellite) {
-      if (!satellite.id) {
-        const created = await createSatellite(satellite);
-        dispatch({ type: 'SATELLITE_CREATED', satellite: created });
-        return;
-      }
-      const updated = await updateSatellite(satellite);
-      dispatch({ type: 'SATELLITE_UPDATED', satellite: updated });
+  async function save(satellite) {
+    if (!satellite.id) {
+      const created = await createSatellite(satellite);
+      dispatch({ type: 'SATELLITE_CREATED', satellite: created });
+      return;
     }
+    const updated = await updateSatellite(satellite);
+    dispatch({ type: 'SATELLITE_UPDATED', satellite: updated });
+  }
 
-    function remove(satellite) {
-      deleteSatellite(satellite);
-      dispatch({ type: 'SATELLITE_DELETED', satellite });
-    }
+  function remove(satellite) {
+    deleteSatellite(satellite);
+    dispatch({ type: 'SATELLITE_DELETED', satellite });
+  }
 
-    return { satellites, save, remove };
-  }, [satellites]);
-
-  return satelliteUtils;
+  return { satellites, save, remove };
 }
 
 const SatelliteContext = createContext();

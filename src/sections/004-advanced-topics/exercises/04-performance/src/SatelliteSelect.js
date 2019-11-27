@@ -8,10 +8,10 @@ export const SatelliteSelect = React.memo(function SatelliteSelect({
   selectedSatelliteId
 }) {
   const { satellites } = useGlobalSatellites();
-  const largeNumber = useMemo(() => calculateLargeNumber(), []);
+  const number = useMemo(() => calculateLargeNumber(), []);
   return (
     <ul className="satellite-link-select-list">
-      {largeNumber}
+      {number}
       {satellites.map(s => (
         <li
           key={s.id}
@@ -21,7 +21,7 @@ export const SatelliteSelect = React.memo(function SatelliteSelect({
               : ''
           }
         >
-          <Link to={`/${s.id}`}>{s.name}</Link>
+          <Link to={'/' + s.id}>{s.name}</Link>
         </li>
       ))}
     </ul>
@@ -30,7 +30,7 @@ export const SatelliteSelect = React.memo(function SatelliteSelect({
 
 function calculateLargeNumber() {
   let sum = 0;
-  for (let i = 0; i < 1e9; i++) {
+  for (let i = 0; i <= 1e9; i++) {
     sum += i;
   }
   return sum;

@@ -23,7 +23,10 @@ export const performanceSlides = [
       </ListItem>
       <ListItem>
         There are numerous performance comparisons (
-        <ALink href="https://github.com/krausest/js-framework-benchmark">
+        <ALink
+          target="_blank"
+          href="https://github.com/krausest/js-framework-benchmark"
+        >
           example
         </ALink>
         )

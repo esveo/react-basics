@@ -33,10 +33,6 @@ export const performanceExerciseSlides = [
         already selected satellite.
       </ListItem>
       <ListItem>
-        Memoize the result of the <Code>GlobalSatelliteProvider</Code> with
-        useMemo
-      </ListItem>
-      <ListItem>
         Apply React.memo to <Code>SatelliteSelect</Code>.
       </ListItem>
       <ListItem>Apply useMemo to the computation of the sum.</ListItem>

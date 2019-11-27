@@ -48,7 +48,7 @@ export const stylingInReactSlides = [
           <ListItem>
             Example from BEM: <Code>.contact-form__status--error</Code>
           </ListItem>
-          <ListItem>Can be enforce through Code Reviews</ListItem>
+          <ListItem>Can be enforced through Code Reviews</ListItem>
           <ListItem>Still only a convention</ListItem>
         </List>
       </Column>
