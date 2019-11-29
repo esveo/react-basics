@@ -41,9 +41,9 @@ export function PreparationSlides() {
         </Foreground>
       </Slide>
       {[
-        preambelSlides[2],
-        preambelSlides[3],
-        preambelSlides[9],
+        preambelSlides.find(s => s.key === 'goal'),
+        preambelSlides.find(s => s.key === 'prerequisites'),
+        preambelSlides.find(s => s.key === 'preparations'),
         <Slide>
           <Header text="Key facts" />
           <List>

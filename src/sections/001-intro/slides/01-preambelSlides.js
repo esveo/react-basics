@@ -64,6 +64,11 @@ export const preambelSlides = [
 
   <Slide>
     <Header text="What do we want to achieve?" />
+    <Footer />
+  </Slide>,
+
+  <Slide key="goal">
+    <Header text="What do we want to achieve?" />
     <Text size={1.3}>
       You should be able to <b>build your own React projects</b> from scratch.
     </Text>
@@ -74,7 +79,7 @@ export const preambelSlides = [
     <Footer />
   </Slide>,
 
-  <Slide>
+  <Slide key="prerequisites">
     <Header text="What should you already know?" />
     <Columns>
       <Column weight={1}>
@@ -309,7 +314,7 @@ export const preambelSlides = [
     <Footer />
   </Slide>,
 
-  <Slide>
+  <Slide key="preparations">
     <Header text="What do you need to participate?" />
     <List>
       <ListItem>
