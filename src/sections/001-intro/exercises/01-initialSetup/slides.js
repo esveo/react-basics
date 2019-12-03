@@ -4,12 +4,19 @@ import { dash } from '../../../../__helpers/dash';
 import { Code } from '../../../../__helpers/slides/Code';
 import { Footer } from '../../../../__helpers/slides/Footer';
 import { Header } from '../../../../__helpers/slides/Header';
-import { Link } from '../../../../__helpers/slides/Link';
+import { ALink, Link } from '../../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../../__helpers/slides/List';
 import { pathToSolution } from '../../../../__helpers/solutions/pathToSolution';
 import { key } from './key';
 
 export const initialSetupExerciseSlides = [
+  <Slide>
+    <ALink href="https://esveo.com/react-basics.zip" target="_blank">
+      https://esveo.com/react-basics.zip
+    </ALink>
+    <Footer />
+  </Slide>,
+
   <Slide>
     <Header text="Initial Setup" tag="Exercise" />
     <List>
@@ -34,6 +41,12 @@ export const initialSetupExerciseSlides = [
       <ListItem>Navigate into your development folder</ListItem>
       <ListItem>
         Run this command: <Code>npx create-react-app react-basics</Code>
+      </ListItem>
+      <ListItem>
+        Or: <Code>npm i -g create-react-app</Code>
+        <br />
+        And then: <Code>create-react-app react-basics</Code>
+        <br />
       </ListItem>
       <ListItem>Navigate into the newly created folder</ListItem>
       <ListItem>

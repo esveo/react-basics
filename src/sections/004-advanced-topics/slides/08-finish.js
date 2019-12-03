@@ -4,6 +4,7 @@ import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
 import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { Text } from '../../../__helpers/slides/Text';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 
 export const finishSlides = [
@@ -63,5 +64,13 @@ export const finishSlides = [
       <ListItem>Use React-Native to build mobile apps</ListItem>
     </List>
     <Footer />
+  </Slide>,
+
+  <Slide>
+    <Text>
+      <ALink href="https://www.esveo.com/s/fb-rbt" target="_blank">
+        www.esveo.com/s/fb-rbt
+      </ALink>
+    </Text>
   </Slide>
 ];

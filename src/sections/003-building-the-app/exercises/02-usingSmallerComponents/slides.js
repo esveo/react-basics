@@ -17,7 +17,8 @@ export const usingSmallerComponentsExerciseSlides = [
         <Code>SatelliteSelect.css</Code>
       </ListItem>
       <ListItem>
-        Install the <Code>prop-types</Code> package.
+        Install the <Code>prop-types</Code> package:{' '}
+        <Code>npm i prop-types</Code>
       </ListItem>
       <ListItem>
         Define a new component <Code>SatelliteSelect</Code> and add propTypes:

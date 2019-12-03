@@ -80,7 +80,7 @@ export const dataFlowExerciseSlides = [
         Pass this function to the <Code>App</Code> component:
         <br />
         <Code>
-          {'<App counter={counter} increment={incrementAndRender} />'}
+          {'<App counter={counter} incrementCounter={incrementAndRender} />'}
         </Code>
       </ListItem>
       <ListItem>

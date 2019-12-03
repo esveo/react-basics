@@ -1,0 +1,13 @@
+- !!! Aufgaben sind unklar formuliert
+- !!! Aufgaben besser strukturieren (regt auch zum selbst denken an?)
+
+- Zeit zum Refactorn ist da
+- Kommunikation der Komponenten noch mal näher erläutern
+  - was sind props explizit erläutern
+  - Objekt kommt in Komponente als props an
+  - eventHandler - wert kreislauf noch mal darstellen
+- Verpflegung in Teilnehmerbroschüre erwähnen
+- Essen war gut
+- Best Practices / Über alternativen diskutieren (Auf Fallstricke, Common Problems eingehen)
+
+- Tagesablauf / Pausen etc. ankündigen

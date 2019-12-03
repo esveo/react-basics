@@ -20,6 +20,21 @@ import { ReactComponent as ModulesSVG } from './modules.svg';
 
 export const preambelSlides = [
   <Slide>
+    <Header text="Who are you?" />
+    <List>
+      <ListItem>What's your name?</ListItem>
+      <ListItem>
+        What are your experiences regarding
+        <List>
+          <ListItem>Software development</ListItem>
+          <ListItem>Web development</ListItem>
+        </List>
+      </ListItem>
+    </List>
+    <Footer />
+  </Slide>,
+
+  <Slide>
     <Header text="About us" />
     <Columns>
       <Column>
@@ -44,26 +59,27 @@ export const preambelSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Who are you?" />
+    <Header />
     <List>
-      <ListItem>What's your name?</ListItem>
-      <ListItem>
-        What are your experiences regarding
-        <List>
-          <ListItem>Software development</ListItem>
-          <ListItem>Web development</ListItem>
-          <ListItem>React</ListItem>
-        </List>
-      </ListItem>
-      <ListItem>
-        What expectations do you have regarding this training?
-      </ListItem>
+      <ListItem>Why are you interested in React?</ListItem>
+      <ListItem>What are your expectations regarding React?</ListItem>
     </List>
     <Footer />
   </Slide>,
 
   <Slide>
-    <Header text="What do we want to achieve?" />
+    <Header />
+    <List>
+      <ListItem>
+        What expectations do you have regarding this training?
+        <List>
+          <ListItem>What topics do you wish to be covered?</ListItem>
+          <ListItem>
+            What do you expect to be able to do after this training?
+          </ListItem>
+        </List>
+      </ListItem>
+    </List>
     <Footer />
   </Slide>,
 

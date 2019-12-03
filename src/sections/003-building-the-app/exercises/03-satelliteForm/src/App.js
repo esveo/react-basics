@@ -44,6 +44,7 @@ export function App(props) {
       </div>
       <div className="satellite-details">
         <SatelliteForm
+          key={selectedSatelliteId}
           onSave={handleSave}
           satellite={selectedSatellite}
           onDelete={handleDelete}
@@ -98,4 +99,3 @@ const dummyData = [
     reverse: true
   }
 ];
-
