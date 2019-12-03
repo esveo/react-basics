@@ -21,7 +21,7 @@ export const sideEffectsSlides = [
       Things that are <b>not allowed</b> to do directly in the render function:
     </Text>
     <List>
-      <ListItem>Mutate variables</ListItem>
+      <ListItem>Mutate state variables</ListItem>
       <ListItem>Set state</ListItem>
       <ListItem>
         Introduce randomnes (e.g. by calling <Code>Math.random()</Code>)
