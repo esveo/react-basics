@@ -1,0 +1,10 @@
+- Bisschen wenig vegetarisches
+- routing war zu schnell!
+- Form Übung war viel zu lang
+- Bewegungspause
+- Bessere Definition der API
+  - Server erzeugt ID (sollte man hinschreiben)
+  - Erklärung des Backends (kurz Code zeigen?)
+
+- Routing
+- Stale closure Problem nochmal zeigen
