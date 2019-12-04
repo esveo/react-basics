@@ -13,10 +13,9 @@ export function App(props) {
 
   function handleSave(satellite) {
     if (!selectedSatelliteId) {
-      setSatellites(s => [
-        ...s,
-        { id: (Math.random() * 99999).toFixed(0), ...satellite }
-      ]);
+      const newId = (Math.random() * 99999).toFixed(0);
+      setSatellites(s => [...s, { id: newId, ...satellite }]);
+      setSelectedSatelliteId(newId);
       return;
     }
     setSatellites(oldSatellites =>
@@ -30,6 +29,7 @@ export function App(props) {
     setSatellites(oldSatellites =>
       oldSatellites.filter(s => s.id !== satellite.id)
     );
+    setSelectedSatelliteId(null);
   }
 
   return (
@@ -44,7 +44,6 @@ export function App(props) {
       </div>
       <div className="satellite-details">
         <SatelliteForm
-          key={selectedSatelliteId}
           onSave={handleSave}
           satellite={selectedSatellite}
           onDelete={handleDelete}
