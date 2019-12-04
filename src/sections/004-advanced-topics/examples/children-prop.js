@@ -1,20 +1,19 @@
+// in App.js
 <div>
-  <Route
-    path="/projects/:id"
-    render={routerProps => {
-      // Will only be called when route matches
-      return <span>{routerProps.match.params.id}</span>;
-    }}
-  />
-  <Route
-    path="/projects/:id"
-    children={routerProps => {
-      // Will always be called
-      if (!routerProps.match) {
-        // routerProps.match will be null when route is not matching
-        return <span>No project found</span>;
-      }
-      return <span>{routerProps.match.params.id}</span>;
-    }}
-  />
+  <Route path="/projects">
+    <h1>Hello World</h1>
+  </Route>
 </div>;
+
+// in Route.js
+function Route(props) {
+  const currentRoute = useCurrentRoute();
+  if (props.path === currentRoute) {
+    return props.children;
+  }
+  return null;
+}
+Route.propTypes = {
+  path: string.isRequired,
+  children: node
+};

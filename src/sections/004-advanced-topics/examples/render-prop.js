@@ -1,13 +1,12 @@
 function Multiplier({ renderItem, count }) {
-  let items = [];
+  const items = [];
   for (let i = 0; i < count; i++) {
-    // Render item returns a ReactNode
     items.push(<li key={i}>{renderItem(i)}</li>);
   }
   return <ul>{items}</ul>;
 }
 
-function UsingMultiplier() {
+function App() {
   return (
     <div>
       <Multiplier

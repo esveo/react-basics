@@ -32,6 +32,7 @@ import { simpleStateManagementExerciseSlides } from '../../sections/004-advanced
 import { reducerPatternExerciseSlides } from '../../sections/004-advanced-topics/exercises/03-reducerPattern/slides';
 import { performanceExerciseSlides } from '../../sections/004-advanced-topics/exercises/04-performance/slides';
 import { testingExerciseSlides } from '../../sections/004-advanced-topics/exercises/05-testing/slides';
+import { childrenPropExerciseSlides } from '../../sections/004-advanced-topics/exercises/06-children-prop/slides';
 import { advancedTopicsSlides } from '../../sections/004-advanced-topics/slides';
 import { routingSlides } from '../../sections/004-advanced-topics/slides/01-routing';
 import { simpleStateManagementSlides } from '../../sections/004-advanced-topics/slides/02-simpleStateManagement';
@@ -40,6 +41,7 @@ import { classesSlides } from '../../sections/004-advanced-topics/slides/04-clas
 import { stylingInReactSlides } from '../../sections/004-advanced-topics/slides/05-stylingInReact';
 import { performanceSlides } from '../../sections/004-advanced-topics/slides/06-performance';
 import { testingSlides } from '../../sections/004-advanced-topics/slides/07-testing';
+import { patternSlides } from '../../sections/004-advanced-topics/slides/99-patterns';
 import { globalSlides } from '../../sections/globalSlides';
 import { Column, Columns } from './Column';
 import { LinkToSlides } from './LinkToSlide';
@@ -164,6 +166,11 @@ export function TOCSlideContent({ slide, noLinks }) {
           name: 'Testing',
           slides: testingSlides,
           exercise: testingExerciseSlides
+        },
+        {
+          name: '(Patterns)',
+          slides: patternSlides,
+          exercise: childrenPropExerciseSlides
         }
       ]
     }
