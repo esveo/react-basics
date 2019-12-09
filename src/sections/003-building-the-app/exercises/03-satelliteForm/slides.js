@@ -4,21 +4,12 @@ import { dash } from '../../../../__helpers/dash';
 import { Code } from '../../../../__helpers/slides/Code';
 import { Footer } from '../../../../__helpers/slides/Footer';
 import { Header } from '../../../../__helpers/slides/Header';
-import { Heading } from '../../../../__helpers/slides/Heading';
 import { ALink, Link } from '../../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../../__helpers/slides/List';
-import { scheduleSlide } from '../../../../__helpers/slides/Schedule';
 import { pathToSolution } from '../../../../__helpers/solutions/pathToSolution';
 import { key } from './key';
 
 export const satelliteFormExerciseSlides = [
-  <Slide>
-    <Heading>Good morning</Heading>
-  </Slide>,
-  scheduleSlide,
-  <Slide>
-    <Heading>Summary</Heading>
-  </Slide>,
   <Slide>
     <Header
       text={`Build a form to edit satellites ${dash} part 1`}

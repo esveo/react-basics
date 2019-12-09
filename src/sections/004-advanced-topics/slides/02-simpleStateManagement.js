@@ -7,14 +7,27 @@ import { CodeBlock } from '../../../__helpers/slides/CodeBlock';
 import { Column, ColumnHead, Columns } from '../../../__helpers/slides/Column';
 import { Footer } from '../../../__helpers/slides/Footer';
 import { Header } from '../../../__helpers/slides/Header';
+import { Heading } from '../../../__helpers/slides/Heading';
 import { ALink } from '../../../__helpers/slides/Link';
 import { List, ListItem } from '../../../__helpers/slides/List';
+import { scheduleSlide } from '../../../__helpers/slides/Schedule';
 import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 import { simpleStateManagementExerciseSlides } from '../exercises/02-simpleStateManagement/slides';
 import { ReactComponent as ContextSVG } from './context.svg';
+import { DemoComponentWithSource } from './DemoComponentWithSource';
 import { ReactComponent as GlobalVSLocalStateSVG } from './global-vs-local-state.svg';
 
 export const simpleStateManagementSlides = [
+  <Slide>
+    <Heading>Good morning</Heading>
+  </Slide>,
+  scheduleSlide,
+  <Slide>
+    <Heading>Summary</Heading>
+  </Slide>,
+  <Slide>
+    <DemoComponentWithSource />
+  </Slide>,
   getTOCSlide(),
 
   <Slide>

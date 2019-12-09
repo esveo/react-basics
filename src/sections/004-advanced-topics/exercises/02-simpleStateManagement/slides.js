@@ -1,6 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import { Slide } from 'spectacle';
+import { dash } from '../../../../__helpers/dash';
 import { Code } from '../../../../__helpers/slides/Code';
 import { Footer } from '../../../../__helpers/slides/Footer';
 import { Header } from '../../../../__helpers/slides/Header';
@@ -11,7 +12,10 @@ import { key } from './key';
 
 export const simpleStateManagementExerciseSlides = [
   <Slide>
-    <Header text="Handle satellites in a separated container" tag="Exercise" />
+    <Header
+      text={`Handle satellites in a separated container ${dash} Part 1`}
+      tag="Exercise"
+    />
     <List>
       <ListItem>
         Create a file <Code>Satellites.js</Code>.
@@ -49,7 +53,10 @@ export const simpleStateManagementExerciseSlides = [
   </Slide>,
 
   <Slide>
-    <Header text="Handle satellites in a separated container" tag="Exercise" />
+    <Header
+      text={`Handle satellites in a separated container ${dash} Part 2`}
+      tag="Exercise"
+    />
     <List>
       <ListItem>
         Add the <Code>GlobalSatelliteProvider</Code> around the <Code>App</Code>{' '}

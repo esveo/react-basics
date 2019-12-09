@@ -20,10 +20,7 @@ export function App(props) {
   return (
     <div className="satellite-control-app">
       <div className="satellite-link-select">
-        <SatelliteSelect
-          selectedSatelliteId={selectedSatelliteId}
-          satellites={satellites}
-        />
+        <SatelliteSelect selectedSatelliteId={selectedSatelliteId} />
         <Button onClick={() => history.push('/')}>Create new</Button>
       </div>
       <div className="satellite-details">

@@ -15,10 +15,13 @@ export const scheduleSlide = (
         <b>10:30:</b> Coffee break
       </ListItem>
       <ListItem>
-        <b>12:15:</b> Lunch
+        <b>12:00:</b> Lunch
       </ListItem>
       <ListItem>
-        <b>15:00:</b> Coffee break
+        <b>14:30:</b> Coffee break
+      </ListItem>
+      <ListItem>
+        <b>16:00:</b> End
       </ListItem>
     </List>
     <Footer />

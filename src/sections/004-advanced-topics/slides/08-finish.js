@@ -9,7 +9,6 @@ import { getTOCSlide } from '../../../__helpers/slides/TOCSlide';
 
 export const finishSlides = [
   getTOCSlide(),
-
   <Slide>
     <Header text="Resources" />
     <List>
@@ -39,6 +38,21 @@ export const finishSlides = [
         >
           https://reacttraining.com/react-router/web/guides/quick-start
         </ALink>
+      </ListItem>
+      <ListItem>
+        JS Meetup: <ALink href="http://dresdenjs.io/">DresdenJS</ALink>
+      </ListItem>
+      <ListItem>
+        Reddit community:{' '}
+        <ALink href="https://www.reddit.com/r/reactjs">ReactJS</ALink>
+      </ListItem>
+      <ListItem>
+        Twitter:{' '}
+        <ALink href="https://twitter.com/dan_abramov">Dan Abramov</ALink>
+      </ListItem>
+      <ListItem>
+        For other questions:{' '}
+        <ALink href="https://twitter.com/andrewgreenh">My Twitter</ALink>
       </ListItem>
     </List>
     <Footer />

@@ -17,7 +17,7 @@ export const testingExerciseSlides = [
         run <Code>npm run test</Code> in your project folder
       </ListItem>
       <ListItem>
-        Export <Code>satelliteReducer</Code> form <Code>Satellites.js</Code>.
+        Export <Code>satelliteReducer</Code> from <Code>Satellites.js</Code>.
       </ListItem>
       <ListItem>
         Create a new file <Code>Satellites.test.js</Code>. Jest should pick it

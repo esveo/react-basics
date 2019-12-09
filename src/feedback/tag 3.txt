@@ -1,0 +1,13 @@
+- Context Übung zu groß
+- Summary war sehr gut, nach dem Essen wäre das auch cool
+  Im stehen kommt man eher in eine Diskussion
+- Übungen in kleineren Schritten, damit man früher merkt, wo Fehler sind
+- Context Übung war zu großer Sprung von Einführung zu Slides
+- In Lösungen waren teilweise Konzepte enthalten, die noch nicht vorgestellt wurden
+- Grundgedanke: Theorie -> Übung -> Wiederholung
+
+
+- Als Einstieg ist so eine Schulung gut
+- Internet hat tausend verschiedene Lösungen, in der Schulung hat man klarere Vorgaben und kann Best Practices mitnehmen. "Viel besser"
+- Da JS so schnelllebig ist, weiß man im Netz nicht, was aktuell ist. DIe Schulung ist halt (hoffentlich) immer aktuell
+

@@ -1,0 +1,14 @@
+export function DemoComponent(props) {
+  // %STATE%
+  const [text, setText] = useState('1');
+
+  useEffect(() => {
+    // %STATE%
+    // ...
+  }, [text]);
+
+  return <input
+    value={text}
+    onChange={e => setText(e.target.value)}
+  />;
+}
